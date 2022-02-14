@@ -12,7 +12,7 @@ import React from 'react';
 import {SafeAreaView, StatusBar, Text, useColorScheme} from 'react-native';
 import {WebView} from 'react-native-webview';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {VN_POST_INJECTED_JAVASCRIPT} from './app/utils/executeScripts';
+import {GHN_INJECTED_JAVASCRIPT} from './app/utils/executeScripts';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -27,12 +27,12 @@ const App = () => {
       <Text>
         <WebView
           source={{
-            uri: 'http://www.vnpost.vn/vi-vn/dinh-vi/buu-pham?key=CE373808865VN',
+            uri: 'https://donhang.ghn.vn/?order_code=GANH64B4',
           }}
           onMessage={event => {
-            console.log(event.nativeEvent.data);
+            console.log(JSON.parse(event.nativeEvent.data));
           }}
-          injectedJavaScript={VN_POST_INJECTED_JAVASCRIPT}
+          injectedJavaScript={GHN_INJECTED_JAVASCRIPT}
         />
       </Text>
     </SafeAreaView>
