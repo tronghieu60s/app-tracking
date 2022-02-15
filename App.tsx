@@ -12,7 +12,7 @@ import React from 'react';
 import {SafeAreaView, StatusBar, Text, useColorScheme} from 'react-native';
 import {WebView} from 'react-native-webview';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {GHN_INJECTED_JAVASCRIPT} from './app/utils/executeScripts';
+import {JT_INJECTED_JAVASCRIPT} from './app/utils/executeScripts';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -27,12 +27,12 @@ const App = () => {
       <Text>
         <WebView
           source={{
-            uri: 'https://donhang.ghn.vn/?order_code=GANH64B4',
+            uri: 'https://jtexpress.vn/track?billcodes=812128093976',
           }}
           onMessage={event => {
             console.log(JSON.parse(event.nativeEvent.data));
           }}
-          injectedJavaScript={GHN_INJECTED_JAVASCRIPT}
+          injectedJavaScript={JT_INJECTED_JAVASCRIPT}
         />
       </Text>
     </SafeAreaView>
