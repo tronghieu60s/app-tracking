@@ -8,18 +8,17 @@ export const GHN_INJECTED_JAVASCRIPT = `(function() {
 
 export const VN_POST_INJECTED_JAVASCRIPT = `(function() {
     setTimeout(async function() {
-      const packageCode = document.querySelector('.package-code > strong').innerText;
-      const packageWeight = document.querySelector('.package-weight > strong').innerText;
-      const packageLocation = document.querySelector('.package-location > strong').innerText;
+      const packageCode = document.querySelector('.package-code > strong').innerText.trim();
+      const packageWeight = document.querySelector('.package-weight > strong').innerText.trim();
+      const packageLocation = document.querySelector('.package-location > strong').innerText.trim();
 
       const timeline = document.querySelectorAll('.timeline-list-item > ul > li');
       const packageTimeline = [];
       for (let i = timeline.length - 1; i >= 0; i -= 1) {
-        const timelineItem = timeline[i];
-        const labelTime = timelineItem.querySelector('.label-time').innerText.trim();
-        const labelStatus = timelineItem.querySelector('.block-span').innerText;
-        const labelLocation = timelineItem.querySelector('.block-span .label-location').innerText.trim();
-        packageTimeline.push({labelTime, labelStatus: labelStatus.replace(labelLocation, "").trim(), labelLocation});
+        const labelTime = timeline[i].querySelector('.label-time').innerText.trim();
+        const labelLocation = timeline[i].querySelector('.block-span .label-location').innerText.trim();
+        const labelStatus = timeline[i].querySelector('.block-span').innerText.replace(labelLocation, "").trim();
+        packageTimeline.push({labelTime, labelLocation, labelStatus});
       }
 
       const packageInfo = {packageCode, packageWeight, packageLocation, packageTimeline};
