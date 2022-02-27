@@ -1,9 +1,4 @@
 {
-	"absolute": {
-		"style": {
-			"position": "absolute"
-		}
-	},
 	"mt-5": {
 		"style": {
 			"marginTop": 20
@@ -17,16 +12,6 @@
 	"flex": {
 		"style": {
 			"display": "flex"
-		}
-	},
-	"h-10": {
-		"style": {
-			"height": 40
-		}
-	},
-	"h-11": {
-		"style": {
-			"height": 44
 		}
 	},
 	"h-12": {
@@ -49,6 +34,11 @@
 	"items-center": {
 		"style": {
 			"alignItems": "center"
+		}
+	},
+	"justify-center": {
+		"style": {
+			"justifyContent": "center"
 		}
 	},
 	"self-center": {
@@ -77,14 +67,6 @@
 			"borderLeftWidth": 1
 		}
 	},
-	"border-2": {
-		"style": {
-			"borderTopWidth": 2,
-			"borderRightWidth": 2,
-			"borderBottomWidth": 2,
-			"borderLeftWidth": 2
-		}
-	},
 	"border-slate-700": {
 		"style": {
 			"--tw-border-opacity": 1,
@@ -104,6 +86,11 @@
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
+		}
+	},
+	"bg-transparent": {
+		"style": {
+			"backgroundColor": "transparent"
 		}
 	},
 	"px-3": {
@@ -130,33 +117,9 @@
 			"paddingRight": 16
 		}
 	},
-	"px-2": {
-		"style": {
-			"paddingLeft": 8,
-			"paddingRight": 8
-		}
-	},
-	"px-1": {
-		"style": {
-			"paddingLeft": 4,
-			"paddingRight": 4
-		}
-	},
-	"px-1.5": {
-		"style": {
-			"paddingLeft": 6,
-			"paddingRight": 6
-		}
-	},
 	"text-center": {
 		"style": {
 			"textAlign": "center"
-		}
-	},
-	"text-2xl": {
-		"style": {
-			"fontSize": 24,
-			"lineHeight": 32
 		}
 	},
 	"text-sm": {
@@ -165,21 +128,15 @@
 			"lineHeight": 20
 		}
 	},
-	"text-lg": {
+	"text-2xl": {
 		"style": {
-			"fontSize": 18,
-			"lineHeight": 28
+			"fontSize": 24,
+			"lineHeight": 32
 		}
 	},
 	"font-bold": {
 		"style": {
 			"fontWeight": "700"
-		}
-	},
-	"text-slate-800": {
-		"style": {
-			"--tw-text-opacity": 1,
-			"color": "rgb(30 41 59 / var(--tw-text-opacity))"
 		}
 	},
 	"text-white": {
@@ -188,16 +145,10 @@
 			"color": "rgb(255 255 255 / var(--tw-text-opacity))"
 		}
 	},
-	"text-neutral-700": {
+	"text-slate-800": {
 		"style": {
 			"--tw-text-opacity": 1,
-			"color": "rgb(64 64 64 / var(--tw-text-opacity))"
-		}
-	},
-	"text-neutral-600": {
-		"style": {
-			"--tw-text-opacity": 1,
-			"color": "rgb(82 82 82 / var(--tw-text-opacity))"
+			"color": "rgb(30 41 59 / var(--tw-text-opacity))"
 		}
 	},
 	"underline": {

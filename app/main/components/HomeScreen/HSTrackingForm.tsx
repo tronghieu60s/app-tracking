@@ -1,7 +1,9 @@
 import {Picker} from '@react-native-picker/picker';
-import React from 'react';
+import {deliveriesState} from '@reducers/commonReducer';
+import React, {useCallback} from 'react';
 import {Text, TextInput, TouchableNativeFeedback, View} from 'react-native';
 import {Package, Truck} from 'react-native-feather';
+import {useRecoilValue} from 'recoil';
 import {useTailwind} from 'tailwind-rn/dist';
 
 type Props = {
@@ -13,6 +15,21 @@ type Props = {
 
 export default function HSTrackingForm(props: Props) {
   const tailwind = useTailwind();
+  const deliveries = useRecoilValue(deliveriesState);
+
+  const renderItems = useCallback(
+    () =>
+      deliveries.map(delivery => {
+        return (
+          <Picker.Item
+            key={delivery.id_delivery}
+            label={delivery.name_delivery}
+            value={delivery.code_delivery}
+          />
+        );
+      }),
+    [deliveries],
+  );
 
   return (
     <View>
@@ -49,9 +66,7 @@ export default function HSTrackingForm(props: Props) {
             style={{
               transform: [{scaleX: 0.9}, {scaleY: 0.9}, {translateY: -5}],
             }}>
-            <Picker.Item label="J&T Express" value="jt" />
-            <Picker.Item label="Giao Hàng Nhanh" value="ghn" />
-            <Picker.Item label="VN Post" value="vp" />
+            {renderItems()}
           </Picker>
         </View>
       </View>
