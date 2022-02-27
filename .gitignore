@@ -59,5 +59,9 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 
-# Example
-/example/
+# Env
+.env
+.env.local
+.env.development
+.env.staging
+.env.production

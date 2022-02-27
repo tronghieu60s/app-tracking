@@ -1,0 +1,26 @@
+[
+    {
+        "id_delivery": 1,
+        "code_delivery": "jte",
+        "name_delivery": "J&T Express",
+        "description_delivery": "J&T Express",
+        "url_delivery": "https://jtexpress.vn/track?billcodes=",
+        "active_delivery": true
+    },
+    {
+        "id_delivery": 2,
+        "code_delivery": "ghn",
+        "name_delivery": "Giao Hàng Nhanh",
+        "description_delivery": "Giao Hàng Nhanh",
+        "url_delivery": "https://donhang.ghn.vn/?order_code=",
+        "active_delivery": true
+    },
+    {
+        "id_delivery": 3,
+        "code_delivery": "vnp",
+        "name_delivery": "VN Post",
+        "description_delivery": "VN Post",
+        "url_delivery": "http://www.vnpost.vn/vi-vn/dinh-vi/buu-pham?key=",
+        "active_delivery": true
+    }
+]
