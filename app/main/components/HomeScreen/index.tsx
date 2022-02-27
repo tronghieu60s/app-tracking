@@ -1,8 +1,7 @@
+import Tracking from '@components/Common/Tracking';
 import React, {useState} from 'react';
 import {Text, View} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
-import HSTrackingForm from './HSTrackingForm';
-import HSTrackingList from './HSTrackingList';
 
 export default function HomeScreen() {
   const tailwind = useTailwind();
@@ -17,13 +16,12 @@ export default function HomeScreen() {
         )}>
         Tra cứu mã vận đơn của bạn!
       </Text>
-      <HSTrackingForm
+      <Tracking
         packageCode={packageCode}
         setPackageCode={setPackageCode}
         packageDelivery={packageDelivery}
         setPackageDelivery={setPackageDelivery}
       />
-      <HSTrackingList />
     </View>
   );
 }

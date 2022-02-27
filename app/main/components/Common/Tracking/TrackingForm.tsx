@@ -13,7 +13,7 @@ type Props = {
   setPackageDelivery: (packageDelivery: string) => void;
 };
 
-export default function HSTrackingForm(props: Props) {
+export default function TrackingForm(props: Props) {
   const tailwind = useTailwind();
   const deliveries = useRecoilValue(deliveriesState);
 

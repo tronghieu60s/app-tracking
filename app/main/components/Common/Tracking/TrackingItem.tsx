@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
 
-export default function HSTrackingList() {
+export default function TrackingItem() {
   return <View></View>;
 }
