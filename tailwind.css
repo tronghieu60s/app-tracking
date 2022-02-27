@@ -51,11 +51,6 @@
   border-color: rgb(51 65 85 / var(--tw-border-opacity))
 }
 
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity))
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
@@ -63,6 +58,16 @@
 
 .bg-transparent {
   background-color: transparent
+}
+
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity))
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem
 }
 
 .px-3 {
@@ -80,18 +85,8 @@
   padding-bottom: 0.75rem
 }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem
-}
-
 .text-center {
   text-align: center
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem
 }
 
 .text-2xl {
@@ -99,18 +94,23 @@
   line-height: 2rem
 }
 
-.font-bold {
-  font-weight: 700
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity))
+.font-bold {
+  font-weight: 700
 }
 
 .text-slate-800 {
   --tw-text-opacity: 1;
   color: rgb(30 41 59 / var(--tw-text-opacity))
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .underline {

@@ -22,5 +22,22 @@
         "description_delivery": "VN Post",
         "url_delivery": "http://www.vnpost.vn/vi-vn/dinh-vi/buu-pham?key=",
         "active_delivery": true
+    },
+    {
+        "id_delivery": 4,
+        "code_delivery": "spe",
+        "name_delivery": "Shopee Express",
+        "description_delivery": "Shopee Express",
+        "url_delivery": "https://spx.vn/",
+        "active_delivery": true
+    }
+    ,
+    {
+        "id_delivery": 5,
+        "code_delivery": "ghtk",
+        "name_delivery": "Giao Hàng Tiết Kiệm",
+        "description_delivery": "Giao Hàng Tiết Kiệm",
+        "url_delivery": "https://spx.vn/",
+        "active_delivery": true
     }
 ]

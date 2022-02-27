@@ -1,4 +1,5 @@
 import React from 'react';
+import {View} from 'react-native';
 import TrackingForm from './TrackingForm';
 
 type Props = {
@@ -10,13 +11,13 @@ type Props = {
 
 export default function Tracking(props: Props) {
   return (
-    <>
+    <View>
       <TrackingForm
         packageCode={props.packageCode}
         setPackageCode={props.setPackageCode}
         packageDelivery={props.packageDelivery}
         setPackageDelivery={props.setPackageDelivery}
       />
-    </>
+    </View>
   );
 }
