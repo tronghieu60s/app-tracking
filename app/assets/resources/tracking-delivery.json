@@ -1,43 +1,66 @@
 [
     {
         "id_delivery": 1,
-        "code_delivery": "jte",
         "name_delivery": "J&T Express",
         "description_delivery": "J&T Express",
         "url_delivery": "https://jtexpress.vn/track?billcodes=",
-        "active_delivery": true
+        "active_delivery": true,
+        "captcha_delivery": false
     },
     {
         "id_delivery": 2,
-        "code_delivery": "ghn",
         "name_delivery": "Giao Hàng Nhanh",
         "description_delivery": "Giao Hàng Nhanh",
         "url_delivery": "https://donhang.ghn.vn/?order_code=",
-        "active_delivery": true
+        "active_delivery": true,
+        "captcha_delivery": false
     },
     {
         "id_delivery": 3,
-        "code_delivery": "vnp",
         "name_delivery": "VN Post",
         "description_delivery": "VN Post",
         "url_delivery": "http://www.vnpost.vn/vi-vn/dinh-vi/buu-pham?key=",
-        "active_delivery": true
+        "active_delivery": true,
+        "captcha_delivery": false
     },
     {
         "id_delivery": 4,
-        "code_delivery": "spe",
         "name_delivery": "Shopee Express",
         "description_delivery": "Shopee Express",
         "url_delivery": "https://spx.vn/",
-        "active_delivery": true
-    }
-    ,
+        "active_delivery": true,
+        "captcha_delivery": false
+    },
     {
         "id_delivery": 5,
-        "code_delivery": "ghtk",
         "name_delivery": "Giao Hàng Tiết Kiệm",
         "description_delivery": "Giao Hàng Tiết Kiệm",
-        "url_delivery": "https://spx.vn/",
-        "active_delivery": true
+        "url_delivery": "https://i.ghtk.vn/",
+        "active_delivery": true,
+        "captcha_delivery": false
+    },
+    {
+        "id_delivery": 6,
+        "name_delivery": "BEST Express",
+        "description_delivery": "BEST Express",
+        "url_delivery": "https://best-inc.vn/track?bills=",
+        "active_delivery": true,
+        "captcha_delivery": true
+    },
+    {
+        "id_delivery": 7,
+        "name_delivery": "Ninja Van",
+        "description_delivery": "Ninja Van",
+        "url_delivery": "https://www.ninjavan.co/en-vn/tracking?id=",
+        "active_delivery": true,
+        "captcha_delivery": true
+    },
+    {
+        "id_delivery": 8,
+        "name_delivery": "Viettel Post",
+        "description_delivery": "Viettel Post",
+        "url_delivery": "https://viettelpost.com.vn/tra-cuu-hanh-trinh-don/",
+        "active_delivery": true,
+        "captcha_delivery": true
     }
 ]

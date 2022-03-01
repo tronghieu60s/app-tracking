@@ -1,3 +1,4 @@
+import {HSHeaderLeft, HSHeaderRight} from '@components/HomeScreen/HSComponents';
 import useCachedResources from '@hooks/useCachedResources';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -19,7 +20,14 @@ export default function App() {
     <TailwindProvider utilities={utilities}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              headerTitle: () => <HSHeaderLeft />,
+              headerRight: () => <HSHeaderRight />,
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </TailwindProvider>

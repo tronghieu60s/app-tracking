@@ -1,4 +1,9 @@
 {
+	"mr-4": {
+		"style": {
+			"marginRight": 16
+		}
+	},
 	"mt-5": {
 		"style": {
 			"marginTop": 20
@@ -12,6 +17,11 @@
 	"flex": {
 		"style": {
 			"display": "flex"
+		}
+	},
+	"h-full": {
+		"style": {
+			"height": "100%"
 		}
 	},
 	"h-12": {
@@ -59,6 +69,14 @@
 			"borderBottomLeftRadius": 6
 		}
 	},
+	"rounded-full": {
+		"style": {
+			"borderTopLeftRadius": 9999,
+			"borderTopRightRadius": 9999,
+			"borderBottomRightRadius": 9999,
+			"borderBottomLeftRadius": 9999
+		}
+	},
 	"border": {
 		"style": {
 			"borderTopWidth": 1,
@@ -76,21 +94,37 @@
 			"borderLeftColor": "rgb(51 65 85 / var(--tw-border-opacity))"
 		}
 	},
+	"bg-transparent": {
+		"style": {
+			"backgroundColor": "transparent"
+		}
+	},
 	"bg-white": {
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
 		}
 	},
-	"bg-transparent": {
-		"style": {
-			"backgroundColor": "transparent"
-		}
-	},
 	"bg-blue-600": {
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(37 99 235 / var(--tw-bg-opacity))"
+		}
+	},
+	"p-3": {
+		"style": {
+			"paddingTop": 12,
+			"paddingRight": 12,
+			"paddingBottom": 12,
+			"paddingLeft": 12
+		}
+	},
+	"p-1": {
+		"style": {
+			"paddingTop": 4,
+			"paddingRight": 4,
+			"paddingBottom": 4,
+			"paddingLeft": 4
 		}
 	},
 	"px-4": {
@@ -117,9 +151,26 @@
 			"paddingBottom": 12
 		}
 	},
+	"pr-3": {
+		"style": {
+			"paddingRight": 12
+		}
+	},
 	"text-center": {
 		"style": {
 			"textAlign": "center"
+		}
+	},
+	"text-base": {
+		"style": {
+			"fontSize": 16,
+			"lineHeight": 24
+		}
+	},
+	"text-xs": {
+		"style": {
+			"fontSize": 12,
+			"lineHeight": 16
 		}
 	},
 	"text-2xl": {
@@ -137,6 +188,22 @@
 	"font-bold": {
 		"style": {
 			"fontWeight": "700"
+		}
+	},
+	"uppercase": {
+		"style": {
+			"textTransform": "uppercase"
+		}
+	},
+	"tracking-wider": {
+		"style": {
+			"letterSpacing": "0.05em"
+		}
+	},
+	"text-blue-800": {
+		"style": {
+			"--tw-text-opacity": 1,
+			"color": "rgb(30 64 175 / var(--tw-text-opacity))"
 		}
 	},
 	"text-slate-800": {
