@@ -12,4 +12,5 @@ export type DeliveryType = {
 export type UserDeliveryType = DeliveryType & {
   id_tracking: string;
   code_delivery?: string;
+  title_delivery?: string;
 };

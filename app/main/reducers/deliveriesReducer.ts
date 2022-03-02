@@ -1,8 +1,8 @@
-import {DeliveryType} from '@const/types';
+import {UserDeliveryType} from '@const/types';
 import {slAllDeliveries} from '@core/models';
 import {atom, selector} from 'recoil';
 
-export const deliveriesState = selector<DeliveryType[]>({
+export const deliveriesState = selector<UserDeliveryType[]>({
   key: 'deliveriesState',
   get: async ({get}) => {
     get(deliveriesForceLoadState);

@@ -27,6 +27,7 @@ export const insDelivery = async (
   const insertValue = await executeSql(Query.QueryInsertDelivery, [
     id_delivery,
     code_delivery,
+    id_delivery,
   ]);
   return insertValue.raw();
 };

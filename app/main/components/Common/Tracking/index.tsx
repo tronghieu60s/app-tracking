@@ -1,8 +1,8 @@
-import {DeliveryType} from '@const/types';
+import {UserDeliveryType} from '@const/types';
 import React from 'react';
 import TrackingList from './TrackingList';
 
-type Props = {deliveries: DeliveryType[]};
+type Props = {deliveries: UserDeliveryType[]};
 
 export default function Tracking(props: Props) {
   return <TrackingList {...props} />;

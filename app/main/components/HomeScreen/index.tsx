@@ -10,7 +10,7 @@ export default function HomeScreen() {
   const deliveries = useRecoilValue(deliveriesState);
 
   return (
-    <View style={tailwind('flex-1 bg-white px-4')}>
+    <View style={tailwind('flex-1 bg-neutral-100')}>
       <Tracking deliveries={deliveries} />
     </View>
   );
