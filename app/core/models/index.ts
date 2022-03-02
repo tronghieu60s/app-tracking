@@ -31,3 +31,11 @@ export const insDelivery = async (
   ]);
   return insertValue.raw();
 };
+
+/* Delete Database */
+export const delDeliveryById = async (id_tracking: string) => {
+  const deleteValue = await executeSql(Query.QueryDeleteDeliveryById, [
+    id_tracking,
+  ]);
+  return deleteValue.rowsAffected > 0;
+};

@@ -6,7 +6,10 @@ import {View} from 'react-native';
 import {Activity, Clock, Edit, Trash} from 'react-native-feather';
 import {useTailwind} from 'tailwind-rn';
 
-type Props = {delivery: UserDeliveryType};
+type Props = {
+  delivery: UserDeliveryType;
+  onPressDelete: () => void;
+};
 
 export default function TrackingListItem(props: Props) {
   const tailwind = useTailwind();
@@ -56,7 +59,8 @@ export default function TrackingListItem(props: Props) {
           </Ripple>
           <Ripple
             style={tailwind('rounded-full')}
-            styleInside={tailwind('rounded-full p-1')}>
+            styleInside={tailwind('rounded-full p-1')}
+            onPress={props.onPressDelete}>
             <Trash stroke="#000" fill="#fff" width={16} height={16} />
           </Ripple>
         </View>

@@ -33,3 +33,7 @@ export const QuerySelectAllDeliveries =
 export const QueryInsertDelivery = `insert into user_deliveries (id_delivery, code_delivery, title_delivery) values (?, ?, (
     select name_delivery from deliveries where id_delivery = ?
   ));`;
+
+/* Delete Database */
+export const QueryDeleteDeliveryById =
+  'delete from user_deliveries where id_tracking = ?;';

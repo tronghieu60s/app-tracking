@@ -4,15 +4,23 @@ import {FlatList} from 'react-native';
 import {useTailwind} from 'tailwind-rn/dist';
 import TrackingListItem from './TrackingListItem';
 
-type Props = {deliveries: UserDeliveryType[]};
+type Props = {
+  deliveries: UserDeliveryType[];
+  onPressDelete: (delivery: UserDeliveryType) => void;
+};
 
 export default function TrackingList(props: Props) {
   const tailwind = useTailwind();
 
   // ---- Render
   const renderItem = useCallback(
-    ({item}) => <TrackingListItem delivery={item} />,
-    [],
+    ({item}) => (
+      <TrackingListItem
+        delivery={item}
+        onPressDelete={() => props.onPressDelete(item)}
+      />
+    ),
+    [props],
   );
 
   return (
