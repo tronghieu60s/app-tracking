@@ -13,6 +13,7 @@ type Props = {
   setPackageCode: (packageCode: string) => void;
   packageDelivery: string;
   setPackageDelivery: (packageDelivery: string) => void;
+  setModalVisible: (modalVisible: boolean) => void;
 };
 
 export default function TrackingForm(props: Props) {
@@ -35,13 +36,13 @@ export default function TrackingForm(props: Props) {
 
   return (
     <View>
-      <View style={tailwind('flex flex-row items-center mt-5')}>
+      <View style={tailwind('flex flex-row items-center')}>
         <Package
           stroke="#000"
           fill="#fff"
-          width={30}
-          height={30}
-          style={tailwind('mr-3')}
+          width={25}
+          height={25}
+          style={tailwind('mr-4')}
         />
         <TextInput
           value={props.packageCode}
@@ -56,9 +57,9 @@ export default function TrackingForm(props: Props) {
         <Truck
           stroke="#000"
           fill="#fff"
-          width={30}
-          height={30}
-          style={tailwind('mr-3')}
+          width={25}
+          height={25}
+          style={tailwind('mr-4')}
         />
         <View
           style={tailwind('flex-1 border border-slate-700 rounded-md h-12')}>
@@ -72,12 +73,20 @@ export default function TrackingForm(props: Props) {
           </Picker>
         </View>
       </View>
-      <View style={tailwind('mt-5')}>
+      <View style={tailwind('flex-row justify-center mt-8')}>
         <Ripple
-          style={tailwind('rounded-md')}
-          styleInside={tailwind('rounded-md bg-blue-600 py-3')}>
+          style={tailwind('w-10/12 rounded-md mr-2')}
+          styleInside={tailwind('rounded-md bg-blue-600 p-2')}>
           <OpenSansText style={tailwind('text-sm text-white self-center')}>
             Tra cứu đơn hàng
+          </OpenSansText>
+        </Ripple>
+        <Ripple
+          style={tailwind('w-2/12 rounded-md')}
+          styleInside={tailwind('rounded-md bg-red-600 p-2')}
+          onPress={() => props.setModalVisible(false)}>
+          <OpenSansText style={tailwind('text-sm text-white self-center')}>
+            Hủy
           </OpenSansText>
         </Ripple>
       </View>
