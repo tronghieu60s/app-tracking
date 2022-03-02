@@ -1,7 +1,8 @@
+import {OpenSansText} from '@components/Base/StyledText';
 import {Picker} from '@react-native-picker/picker';
 import {deliveriesState} from '@reducers/commonReducer';
 import React, {useCallback} from 'react';
-import {Text, TextInput, TouchableNativeFeedback, View} from 'react-native';
+import {TextInput, TouchableNativeFeedback, View} from 'react-native';
 import {Package, Truck} from 'react-native-feather';
 import {useRecoilValue} from 'recoil';
 import {useTailwind} from 'tailwind-rn/dist';
@@ -75,9 +76,9 @@ export default function TrackingForm(props: Props) {
           <TouchableNativeFeedback
             background={TouchableNativeFeedback.Ripple('#000', false)}>
             <View style={tailwind('bg-blue-600 rounded-md py-3')}>
-              <Text style={tailwind('text-sm text-white self-center')}>
+              <OpenSansText style={tailwind('text-sm text-white self-center')}>
                 Tra cứu đơn hàng
-              </Text>
+              </OpenSansText>
             </View>
           </TouchableNativeFeedback>
         </View>

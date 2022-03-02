@@ -1,6 +1,7 @@
+import {OpenSansText} from '@components/Base/StyledText';
 import Tracking from '@components/Common/Tracking';
 import React, {useState} from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 
 export default function HomeScreen() {
@@ -10,12 +11,12 @@ export default function HomeScreen() {
 
   return (
     <View style={tailwind('flex-1 bg-white px-4')}>
-      <Text
+      <OpenSansText
         style={tailwind(
           'text-center text-2xl text-slate-800 font-bold underline mt-5',
         )}>
         Tra cứu mã vận đơn của bạn!
-      </Text>
+      </OpenSansText>
       <Tracking
         packageCode={packageCode}
         setPackageCode={setPackageCode}

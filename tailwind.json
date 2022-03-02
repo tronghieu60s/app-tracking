@@ -195,6 +195,11 @@
 			"textTransform": "uppercase"
 		}
 	},
+	"italic": {
+		"style": {
+			"fontStyle": "italic"
+		}
+	},
 	"tracking-wider": {
 		"style": {
 			"letterSpacing": "0.05em"
@@ -216,6 +221,12 @@
 		"style": {
 			"--tw-text-opacity": 1,
 			"color": "rgb(255 255 255 / var(--tw-text-opacity))"
+		}
+	},
+	"text-slate-900": {
+		"style": {
+			"--tw-text-opacity": 1,
+			"color": "rgb(15 23 42 / var(--tw-text-opacity))"
 		}
 	},
 	"underline": {

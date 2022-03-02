@@ -1,9 +1,10 @@
-import React from 'react';
+import {OpenSansText} from '@components/Base/StyledText';
 import I18n from '@core/i18n';
-import {Text, TouchableNativeFeedback, View} from 'react-native';
-import {useTailwind} from 'tailwind-rn/dist';
 import {APP_PUBLISHER_NAME} from '@env';
+import React from 'react';
+import {TouchableNativeFeedback, View} from 'react-native';
 import {PlusCircle} from 'react-native-feather';
+import {useTailwind} from 'tailwind-rn/dist';
 
 /* HSHeader -------------------
  * ----------------------------
@@ -14,15 +15,18 @@ export function HSHeaderLeft() {
   const tailwind = useTailwind();
   return (
     <View style={tailwind('bg-transparent')}>
-      <Text
+      <OpenSansText
         style={tailwind(
           'text-blue-800 uppercase text-base font-bold tracking-wider',
         )}>
         {APP_PUBLISHER_NAME}
-      </Text>
-      <Text style={tailwind('uppercase text-xs font-bold tracking-wider')}>
+      </OpenSansText>
+      <OpenSansText
+        style={tailwind(
+          'text-slate-900 uppercase text-xs font-bold tracking-wider',
+        )}>
         {I18n.t('app.header.application')}
-      </Text>
+      </OpenSansText>
     </View>
   );
 }

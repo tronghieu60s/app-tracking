@@ -141,6 +141,10 @@
   text-transform: uppercase
 }
 
+.italic {
+  font-style: italic
+}
+
 .tracking-wider {
   letter-spacing: 0.05em
 }
@@ -158,6 +162,11 @@
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.text-slate-900 {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity))
 }
 
 .underline {
