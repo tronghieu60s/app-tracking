@@ -1,4 +1,10 @@
 {
     "app.header.logo": "EStudy Studio",
-    "app.header.application": "Tra Cứu Mã Vận Đơn"
+    "app.header.application": "Tra Cứu Mã Vận Đơn",
+
+    "app.tab.home": "Trang Chủ",
+    "app.tab.setting": "Cài Đặt",
+    "app.tab.setting.information": "Thông Tin Ứng Dụng",
+
+    "app.common.loading": "Đang tải..."
 }

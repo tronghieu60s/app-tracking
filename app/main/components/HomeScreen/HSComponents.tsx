@@ -29,7 +29,7 @@ export function HSHeaderLeft() {
       </OpenSansText>
       <OpenSansText
         style={tailwind(
-          'text-slate-900 uppercase text-xs font-bold tracking-wider',
+          'text-black uppercase text-xs font-bold tracking-wider',
         )}>
         {I18n.t('app.header.application')}
       </OpenSansText>

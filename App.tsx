@@ -1,16 +1,20 @@
-import {HSHeaderLeft, HSHeaderRight} from '@components/HomeScreen/HSComponents';
 import useCachedResources from '@hooks/useCachedResources';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Navigation from '@navigation/index';
+import {loadingState, themeState} from '@reducers/baseReducer';
+import I18n from 'i18n-js';
 import React from 'react';
-import {TailwindProvider} from 'tailwind-rn';
-import HomeScreen from './app/main/components/HomeScreen';
+import Spinner from 'react-native-loading-spinner-overlay';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {useRecoilValue} from 'recoil';
+import {TailwindProvider, useTailwind} from 'tailwind-rn';
 import utilities from './tailwind.json';
 
-const Stack = createNativeStackNavigator();
-
 export default function App() {
+  const tailwind = useTailwind();
   const isLoadingComplete = useCachedResources();
+
+  const colorScheme = useRecoilValue(themeState);
+  const loadingSpinner = useRecoilValue(loadingState);
 
   if (!isLoadingComplete) {
     return null;
@@ -18,18 +22,15 @@ export default function App() {
 
   return (
     <TailwindProvider utilities={utilities}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{
-              headerTitle: () => <HSHeaderLeft />,
-              headerRight: () => <HSHeaderRight />,
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <Navigation colorScheme={colorScheme} />
+        <Spinner
+          visible={loadingSpinner}
+          cancelable={true}
+          textContent={I18n.t('app.common.loading')}
+          textStyle={tailwind('text-white text-xl ml-3')}
+        />
+      </SafeAreaProvider>
     </TailwindProvider>
   );
 }

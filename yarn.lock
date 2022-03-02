@@ -6197,6 +6197,11 @@ react-native-keep-awake@^4.0.0:
   resolved "https://registry.yarnpkg.com/react-native-keep-awake/-/react-native-keep-awake-4.0.0.tgz#d89fdc3fb60b3cffa979ef37dc5816196df998a2"
   integrity sha512-0Fotox+eLXQooeibVs3P60yASYUWjtRw9MZNmbuHt5UZQrgUrAKsE4jm7gTr4tPU1m1RkwGzcgUFpcOkh/ec7g==
 
+react-native-loading-spinner-overlay@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-3.0.0.tgz#20df946b2d6a70a6e957a74473200ff660732e56"
+  integrity sha512-SmRCmfY795/Jxm9JHoyE0I6ry9uBT7m/RYAPNm0vlfZr9dz39HlzIt4h0MvcZvgSmUjEkHm6DzWnuWSO1yKr4A==
+
 react-native-safe-area-context@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.0.1.tgz#b8413ad703088d8c36d2e56202a28b17aa0df79b"

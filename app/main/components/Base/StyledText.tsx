@@ -23,7 +23,7 @@ export function OpenSansText(props: DefaultText['props']) {
   return (
     <DefaultText
       {...props}
-      style={[props.style, {fontFamily}, disableStyles]}
+      style={[{color: '#000'}, props.style, {fontFamily}, disableStyles]}
     />
   );
 }
