@@ -6,5 +6,23 @@
     "app.tab.setting": "Setting",
     "app.tab.setting.information": "Application Information",
 
+    "app.setting.interface": "Interface settings",
+    "app.setting.interfaceLang.title": "Language",
+    "app.setting.interfaceLang.description": "Current language is",
+    "app.setting.interfaceDark.title": "Dark mode",
+    "app.setting.interfaceDark.description": "Quickly toggle the dark mode.",
+    "app.setting.community": "Community",
+    "app.setting.community.rating": "Rate the app 5 stars",
+    "app.setting.community.feedback": "Feedback",
+    "app.setting.community.share": "Share",
+    "app.setting.community.share.description": "The best order tracking application today, available on the Google Play Store. Download now!!!",
+    "app.setting.community.relate": "Other apps",
+    "app.setting.others": "Others",
+    "app.setting.others.information": "Application information",
+    "app.setting.others.information.device": "Device",
+    "app.setting.others.information.appVersion": "Application version",
+    "app.setting.others.information.appDataVersion": "Application data version",
+    "app.setting.others.backupRestore": "Backup and restore",
+
     "app.common.loading": "Loading..."
 }

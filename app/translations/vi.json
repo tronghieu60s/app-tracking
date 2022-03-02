@@ -6,5 +6,23 @@
     "app.tab.setting": "Cài Đặt",
     "app.tab.setting.information": "Thông Tin Ứng Dụng",
 
+    "app.setting.interface": "Cài đặt giao diện",
+    "app.setting.interfaceLang.title": "Ngôn ngữ",
+    "app.setting.interfaceLang.description": "Ngôn ngữ hiện tại là",
+    "app.setting.interfaceDark.title": "Giao diện tối",
+    "app.setting.interfaceDark.description": "Bật tắt nhanh giao diện tối.",
+    "app.setting.community": "Cộng đồng",
+    "app.setting.community.rating": "Đánh giá ứng dụng 5 sao",
+    "app.setting.community.feedback": "Phản hồi",
+    "app.setting.community.share": "Chia sẻ",
+    "app.setting.community.share.description": "Ứng dụng tra cứu hành trình đơn hàng tốt nhất hiện nay, đã có mặt trên Google Play Store. Tải ngay!!!",
+    "app.setting.community.relate": "Ứng dụng khác",
+    "app.setting.others": "Khác",
+    "app.setting.others.information": "Thông tin ứng dụng",
+    "app.setting.others.information.device": "Thiết bị",
+    "app.setting.others.information.appVersion": "Phiên bản ứng dụng",
+    "app.setting.others.information.appDataVersion": "Phiên bản dữ liệu ứng dụng",
+    "app.setting.others.backupRestore": "Sao lưu và khôi phục",
+
     "app.common.loading": "Đang tải..."
 }
