@@ -1,6 +1,4 @@
-import {OpenSansText} from '@components/Base/StyledText';
-import Tracking from '@components/Common/Tracking';
-import React, {useState} from 'react';
+import React from 'react';
 import {View} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 

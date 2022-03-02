@@ -49,8 +49,11 @@ export function HSHeaderRight() {
         onPress={() => setModalVisible(true)}>
         <PlusCircle stroke="#000" fill="#fff" width={18} height={18} />
       </Ripple>
-      <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}>
-        <View style={tailwind('px-2 py-3 pb-7')}>
+      <Modal
+        animationType="slide"
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}>
+        <View style={tailwind('p-4 pb-7')}>
           <OpenSansText
             style={tailwind(
               'capitalize text-center text-xl text-slate-800 font-bold mb-5',

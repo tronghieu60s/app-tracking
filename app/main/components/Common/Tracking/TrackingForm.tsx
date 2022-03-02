@@ -1,11 +1,11 @@
 import {OpenSansText} from '@components/Base/StyledText';
 import {Ripple} from '@components/Base/Theme';
+import {DeliveryType} from '@const/types';
+import {slDeliveries} from '@core/models';
 import {Picker} from '@react-native-picker/picker';
-import {deliveriesState} from '@reducers/commonReducer';
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {TextInput, View} from 'react-native';
 import {Package, Truck} from 'react-native-feather';
-import {useRecoilValue} from 'recoil';
 import {useTailwind} from 'tailwind-rn/dist';
 
 type Props = {
@@ -18,16 +18,23 @@ type Props = {
 
 export default function TrackingForm(props: Props) {
   const tailwind = useTailwind();
-  const deliveries = useRecoilValue(deliveriesState);
+  const [deliveries, setDeliveries] = useState<DeliveryType[]>([]);
 
-  const renderItems = useCallback(
+  useEffect(() => {
+    (async () => {
+      const response = await slDeliveries();
+      setDeliveries(response);
+    })();
+  }, []);
+
+  const renderPickerItems = useCallback(
     () =>
       deliveries.map(delivery => {
         return (
           <Picker.Item
             key={delivery.id_delivery}
             label={delivery.name_delivery}
-            value={delivery.code_delivery}
+            value={delivery.id_delivery}
           />
         );
       }),
@@ -69,7 +76,7 @@ export default function TrackingForm(props: Props) {
             style={{
               transform: [{scaleX: 0.9}, {scaleY: 0.9}, {translateY: -5}],
             }}>
-            {renderItems()}
+            {renderPickerItems()}
           </Picker>
         </View>
       </View>

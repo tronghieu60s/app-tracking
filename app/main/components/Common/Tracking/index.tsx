@@ -1,8 +1,8 @@
 import React from 'react';
-import {View} from 'react-native';
+import TrackingList from './TrackingList';
 
 type Props = {};
 
 export default function Tracking(props: Props) {
-  return <View></View>;
+  return <TrackingList {...props} />;
 }

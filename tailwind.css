@@ -194,6 +194,11 @@
   padding-bottom: 1rem
 }
 
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem
+}
+
 .pb-5 {
   padding-bottom: 1.25rem
 }
@@ -228,6 +233,11 @@
 
 .text-xl {
   font-size: 1.25rem;
+  line-height: 1.75rem
+}
+
+.text-lg {
+  font-size: 1.125rem;
   line-height: 1.75rem
 }
 

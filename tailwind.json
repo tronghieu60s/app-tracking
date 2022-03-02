@@ -273,6 +273,12 @@
 			"paddingBottom": 16
 		}
 	},
+	"py-2.5": {
+		"style": {
+			"paddingTop": 10,
+			"paddingBottom": 10
+		}
+	},
 	"pb-5": {
 		"style": {
 			"paddingBottom": 20
@@ -315,6 +321,12 @@
 	"text-xl": {
 		"style": {
 			"fontSize": 20,
+			"lineHeight": 28
+		}
+	},
+	"text-lg": {
+		"style": {
+			"fontSize": 18,
 			"lineHeight": 28
 		}
 	},
