@@ -8,3 +8,8 @@ export type DeliveryType = {
   active_delivery?: boolean;
   captcha_delivery?: boolean;
 };
+
+export type UserDeliveryType = DeliveryType & {
+  id_tracking: string;
+  code_delivery?: string;
+};

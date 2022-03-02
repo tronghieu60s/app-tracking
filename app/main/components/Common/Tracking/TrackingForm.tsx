@@ -6,13 +6,15 @@ import {Picker} from '@react-native-picker/picker';
 import React, {useCallback, useEffect, useState} from 'react';
 import {TextInput, View} from 'react-native';
 import {Package, Truck} from 'react-native-feather';
-import {useTailwind} from 'tailwind-rn/dist';
+import {useTailwind} from 'tailwind-rn';
 
 type Props = {
   packageCode: string;
   setPackageCode: (packageCode: string) => void;
   packageDelivery: string;
   setPackageDelivery: (packageDelivery: string) => void;
+
+  onPress: () => void;
   setModalVisible: (modalVisible: boolean) => void;
 };
 
@@ -83,7 +85,8 @@ export default function TrackingForm(props: Props) {
       <View style={tailwind('flex-row justify-center mt-8')}>
         <Ripple
           style={tailwind('w-10/12 rounded-md mr-2')}
-          styleInside={tailwind('rounded-md bg-blue-600 p-2')}>
+          styleInside={tailwind('rounded-md bg-blue-600 p-2')}
+          onPress={props.onPress}>
           <OpenSansText style={tailwind('text-sm text-white self-center')}>
             Tra cứu đơn hàng
           </OpenSansText>

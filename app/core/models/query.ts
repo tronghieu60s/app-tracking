@@ -14,7 +14,8 @@ export const QueryInitDeliveries = `create table if not exists deliveries (
     );`;
 
 export const QueryInitUserDeliveries = `create table if not exists user_deliveries (
-      id_delivery integer primary key not null,
+      id_tracking integer primary key autoincrement,
+      id_delivery integer not null,
       code_delivery text,
       foreign key(id_delivery) references deliveries(id_delivery)
     );`;
@@ -25,4 +26,8 @@ export const QueryDropDeliveries = 'drop table if exists deliveries;';
 /* Select Database */
 export const QuerySelectDeliveries = 'select * from deliveries;';
 export const QuerySelectAllDeliveries =
-  'select * from deliveries inner join user_deliveries on deliveries.id_word = user_deliveries.id_word;';
+  'select * from user_deliveries inner join deliveries on deliveries.id_delivery = user_deliveries.id_delivery;';
+
+/* Insert Database */
+export const QueryInsertDelivery =
+  'insert into user_deliveries (id_delivery, code_delivery) values (?, ?);';

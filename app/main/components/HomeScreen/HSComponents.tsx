@@ -3,10 +3,13 @@ import {OpenSansText} from '@components/Base/StyledText';
 import {Ripple} from '@components/Base/Theme';
 import TrackingForm from '@components/Common/Tracking/TrackingForm';
 import I18n from '@core/i18n';
+import {insDelivery} from '@core/models';
 import {APP_PUBLISHER_NAME} from '@env';
-import React, {useState} from 'react';
+import {deliveriesForceLoadState} from '@reducers/deliveriesReducer';
+import React, {useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {PlusCircle} from 'react-native-feather';
+import {useSetRecoilState} from 'recoil';
 import {useTailwind} from 'tailwind-rn/dist';
 
 /* HSHeader -------------------
@@ -37,9 +40,18 @@ export function HSHeaderLeft() {
 export function HSHeaderRight() {
   const tailwind = useTailwind();
   const [modalVisible, setModalVisible] = useState(false);
+  const setDeliveriesForceLoad = useSetRecoilState(deliveriesForceLoadState);
 
   const [packageCode, setPackageCode] = useState('');
   const [packageDelivery, setPackageDelivery] = useState('');
+
+  const onPress = useCallback(async () => {
+    const insertDelivery = await insDelivery(packageDelivery, packageCode);
+    if (insertDelivery) {
+      setModalVisible(false);
+      setDeliveriesForceLoad(Math.random());
+    }
+  }, [packageCode, packageDelivery, setDeliveriesForceLoad]);
 
   return (
     <View style={tailwind('flex-row justify-center items-center')}>
@@ -65,6 +77,7 @@ export function HSHeaderRight() {
             setPackageCode={setPackageCode}
             packageDelivery={packageDelivery}
             setPackageDelivery={setPackageDelivery}
+            onPress={onPress}
             setModalVisible={setModalVisible}
           />
         </View>
