@@ -1,8 +1,9 @@
 import {OpenSansText} from '@components/Base/StyledText';
+import {Ripple} from '@components/Base/Theme';
 import I18n from '@core/i18n';
 import {APP_PUBLISHER_NAME} from '@env';
 import React from 'react';
-import {TouchableNativeFeedback, View} from 'react-native';
+import {View} from 'react-native';
 import {PlusCircle} from 'react-native-feather';
 import {useTailwind} from 'tailwind-rn/dist';
 
@@ -35,14 +36,11 @@ export function HSHeaderRight() {
   const tailwind = useTailwind();
   return (
     <View style={tailwind('flex-row justify-center items-center')}>
-      <View style={tailwind('rounded-full overflow-hidden')}>
-        <TouchableNativeFeedback
-          background={TouchableNativeFeedback.Ripple('#000', false)}>
-          <View style={tailwind('rounded-full p-1')}>
-            <PlusCircle stroke="#000" fill="#fff" width={18} height={18} />
-          </View>
-        </TouchableNativeFeedback>
-      </View>
+      <Ripple
+        style={tailwind('rounded-full')}
+        styleInside={tailwind('rounded-full p-1')}>
+        <PlusCircle stroke="#000" fill="#fff" width={18} height={18} />
+      </Ripple>
     </View>
   );
 }
