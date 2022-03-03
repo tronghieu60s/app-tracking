@@ -34,7 +34,7 @@ export default function SettingsCommunity() {
     <View style={tailwind('items-start')}>
       <Ripple style={tailwind('w-full')} onPress={onPressRating}>
         <View style={tailwind('bg-transparent flex-row items-center py-3')}>
-          <Star stroke="#1e40af" fill="#fff" width={22} height={22} />
+          <Star stroke="#1e40af" width={22} height={22} />
           <OpenSansText style={tailwind('font-bold ml-3')}>
             {I18n.t('app.setting.community.rating')}
           </OpenSansText>
@@ -42,7 +42,7 @@ export default function SettingsCommunity() {
       </Ripple>
       <Ripple style={tailwind('w-full')} onPress={onPressFeedback}>
         <View style={tailwind('bg-transparent flex-row items-center py-3')}>
-          <MessageSquare stroke="#1e40af" fill="#fff" width={22} height={22} />
+          <MessageSquare stroke="#1e40af" width={22} height={22} />
           <OpenSansText style={tailwind('font-bold ml-3')}>
             {I18n.t('app.setting.community.feedback')}
           </OpenSansText>
@@ -50,7 +50,7 @@ export default function SettingsCommunity() {
       </Ripple>
       <Ripple style={tailwind('w-full')} onPress={onPressShare}>
         <View style={tailwind('bg-transparent flex-row items-center py-3')}>
-          <Share2 stroke="#1e40af" fill="#fff" width={22} height={22} />
+          <Share2 stroke="#1e40af" width={22} height={22} />
           <OpenSansText style={tailwind('font-bold ml-3')}>
             {I18n.t('app.setting.community.share')}
           </OpenSansText>
@@ -58,7 +58,7 @@ export default function SettingsCommunity() {
       </Ripple>
       <Ripple style={tailwind('w-full')} onPress={onPressRelate}>
         <View style={tailwind('bg-transparent flex-row items-center py-3')}>
-          <Package stroke="#1e40af" fill="#fff" width={22} height={22} />
+          <Package stroke="#1e40af" width={22} height={22} />
           <OpenSansText style={tailwind('font-bold ml-3')}>
             {I18n.t('app.setting.community.relate')}
           </OpenSansText>

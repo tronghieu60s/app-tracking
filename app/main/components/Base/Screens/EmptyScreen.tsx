@@ -12,7 +12,7 @@ export default function EmptyScreen() {
       style={[
         tailwind('bg-neutral-100 h-full justify-center items-center px-5'),
       ]}>
-      <AlertCircle stroke="#000" fill="#fff" width={30} height={30} />
+      <AlertCircle stroke="#000" width={30} height={30} />
       <OpenSansText style={tailwind('w-7/12 text-center text-base mt-3')}>
         {I18n.t('app.common.emptyData')}
       </OpenSansText>

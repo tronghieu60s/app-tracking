@@ -1,8 +1,10 @@
 import EmptyScreen from '@components/Base/Screens/EmptyScreen';
 import Tracking from '@components/Common/Tracking';
-import {UserDeliveryType} from '@const/types';
+import {TabOneParamList, UserDeliveryType} from '@const/types';
 import {toast} from '@core/commonFuncs';
 import {delDeliveryById, udDeliveryById} from '@core/models';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {
   deliveriesForceLoadState,
   deliveriesState,
@@ -15,6 +17,8 @@ import {useTailwind} from 'tailwind-rn';
 
 export default function HSTracking() {
   const tailwind = useTailwind();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<TabOneParamList, 'TabOneScreen'>>();
   const [modalVisible, setModalVisible] = useState(false);
 
   const deliveries = useRecoilValue(deliveriesState);
@@ -63,6 +67,9 @@ export default function HSTracking() {
         deliveries={deliveries}
         deliverySelected={deliverySelected}
         setDeliverySelected={setDeliverySelected}
+        onPressItem={(delivery: UserDeliveryType) =>
+          navigation.navigate('HSTrackingDetail', {delivery})
+        }
         onPressEdit={onPressEdit}
         onPressHandleEdit={onPressHandleEdit}
         onPressDelete={onPressDelete}

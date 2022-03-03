@@ -18,6 +18,13 @@ export const slAllDeliveries = async () => {
   return getValue.raw();
 };
 
+export const slDeliveryById = async (id_tracking: string) => {
+  const getValue = await executeSql(Query.QuerySelectDeliveryById, [
+    id_tracking,
+  ]);
+  return getValue.raw()?.[0];
+};
+
 /* Insert Database */
 
 export const insDelivery = async (
@@ -29,7 +36,7 @@ export const insDelivery = async (
     code_delivery,
     id_delivery,
   ]);
-  return insertValue.raw();
+  return insertValue;
 };
 
 /* Delete Database */

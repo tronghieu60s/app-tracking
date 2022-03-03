@@ -6,6 +6,7 @@ type Props = {
   deliveries: UserDeliveryType[];
   deliverySelected: UserDeliveryType;
   setDeliverySelected: (deliverySelected: UserDeliveryType) => void;
+  onPressItem: (delivery: UserDeliveryType) => void;
   onPressEdit: (delivery: UserDeliveryType) => void;
   onPressHandleEdit: () => void;
   onPressDelete: (delivery: UserDeliveryType) => void;

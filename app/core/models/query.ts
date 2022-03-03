@@ -18,6 +18,8 @@ export const QueryInitUserDeliveries = `create table if not exists user_deliveri
       id_delivery integer not null,
       code_delivery text,
       title_delivery text,
+      created_at datetime default (datetime('now','localtime')),
+      updated_at datetime default (datetime('now','localtime')),
       foreign key(id_delivery) references deliveries(id_delivery)
     );`;
 
@@ -27,7 +29,9 @@ export const QueryDropDeliveries = 'drop table if exists deliveries;';
 /* Select Database */
 export const QuerySelectDeliveries = 'select * from deliveries;';
 export const QuerySelectAllDeliveries =
-  'select * from user_deliveries inner join deliveries on deliveries.id_delivery = user_deliveries.id_delivery;';
+  'select * from user_deliveries inner join deliveries on deliveries.id_delivery = user_deliveries.id_delivery order by updated_at desc;';
+export const QuerySelectDeliveryById =
+  'select * from user_deliveries inner join deliveries on deliveries.id_delivery = user_deliveries.id_delivery where id_tracking = ?;';
 
 /* Insert Database */
 export const QueryInsertDelivery = `insert into user_deliveries (id_delivery, code_delivery, title_delivery) values (?, ?, (
@@ -40,4 +44,4 @@ export const QueryDeleteDeliveryById =
 
 /* Update Database */
 export const QueryUpdateDeliveryById =
-  'update user_deliveries set title_delivery = ? where id_tracking = ?;';
+  "update user_deliveries set title_delivery = ?, updated_at = (datetime('now','localtime')) where id_tracking = ?;";

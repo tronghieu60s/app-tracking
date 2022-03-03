@@ -112,6 +112,16 @@ export const getTimeSince = (date: Date) => {
   return `${count} ${interval?.label}${count !== 1 ? 's' : ''} ago`;
 };
 
+/**
+ * @param  {string} date
+ */
+export const getDateTimeFromSql = (datetime: string) => {
+  const [date, time] = datetime.split(' ');
+  const [year, month, day] = date.split('-').map(o => parseInt(o, 10));
+  const [hour, minute, second] = time.split(':').map(o => parseInt(o, 10));
+  return new Date(year, month, day, hour, minute, second);
+};
+
 /* React Native ---------------
  * ----------------------------
  * ----------------------------

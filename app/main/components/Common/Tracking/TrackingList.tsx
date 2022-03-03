@@ -10,6 +10,7 @@ type Props = {
   deliveries: UserDeliveryType[];
   deliverySelected: UserDeliveryType;
   setDeliverySelected: (deliverySelected: UserDeliveryType) => void;
+  onPressItem: (delivery: UserDeliveryType) => void;
   onPressEdit: (delivery: UserDeliveryType) => void;
   onPressHandleEdit: () => void;
   onPressDelete: (delivery: UserDeliveryType) => void;
@@ -26,6 +27,7 @@ export default function TrackingList(props: Props) {
     ({item}) => (
       <TrackingListItem
         delivery={item}
+        onPressItem={() => props.onPressItem(item)}
         onPressEdit={() => props.onPressEdit(item)}
         onPressDelete={() => props.onPressDelete(item)}
       />

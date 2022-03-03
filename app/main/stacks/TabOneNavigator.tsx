@@ -1,6 +1,11 @@
 import Suspense from '@components/Base/Common/Suspense';
 import HomeScreen from '@components/HomeScreen';
-import {HSHeaderLeft, HSHeaderRight} from '@components/HomeScreen/HSComponents';
+import {
+  HSHeaderLeft,
+  HSHeaderRight,
+  HSHeaderTrackingDetailLeft,
+  HSHeaderTrackingDetailRight,
+} from '@components/HomeScreen/HSComponents';
 import HSTrackingDetail from '@components/HomeScreen/HSTrackingDetail';
 import {TabOneParamList} from '@const/types';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -16,18 +21,18 @@ export default function TabOneNavigator() {
       screenOptions={screenOptions}>
       <TabOneStack.Screen
         name="TabOneScreen"
-        options={{
+        options={({navigation}: {navigation: any}) => ({
           headerTitle: () => <HSHeaderLeft />,
-          headerRight: () => <HSHeaderRight />,
-        }}>
+          headerRight: () => <HSHeaderRight navigation={navigation} />,
+        })}>
         {() => <Suspense children={<HomeScreen />} />}
       </TabOneStack.Screen>
       <TabOneStack.Screen
         name="HSTrackingDetail"
-        options={{
-          headerTitle: () => <HSHeaderLeft />,
-          headerRight: () => <HSHeaderRight />,
-        }}>
+        options={({route}: {route: any}) => ({
+          headerTitle: () => <HSHeaderTrackingDetailLeft route={route} />,
+          headerRight: () => <HSHeaderTrackingDetailRight />,
+        })}>
         {() => <Suspense children={<HSTrackingDetail />} />}
       </TabOneStack.Screen>
     </TabOneStack.Navigator>

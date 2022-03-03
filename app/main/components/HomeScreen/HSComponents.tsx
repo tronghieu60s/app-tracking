@@ -2,14 +2,18 @@ import Modal from '@components/Base/Common/Modal';
 import {OpenSansText} from '@components/Base/StyledText';
 import {Ripple} from '@components/Base/Theme';
 import TrackingForm from '@components/Common/Tracking/TrackingForm';
-import {toast} from '@core/commonFuncs';
+import {TabOneParamList} from '@const/types';
+import {capitalizeFirstLetter, toast} from '@core/commonFuncs';
 import I18n from '@core/i18n';
-import {insDelivery} from '@core/models';
+import {insDelivery, slDeliveryById} from '@core/models';
 import {APP_PUBLISHER_NAME} from '@env';
+import {RouteProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {requestTrackingReloadState} from '@reducers/commonReducer';
 import {deliveriesForceLoadState} from '@reducers/deliveriesReducer';
 import React, {useCallback, useState} from 'react';
 import {View} from 'react-native';
-import {PlusCircle} from 'react-native-feather';
+import {PlusCircle, RotateCcw} from 'react-native-feather';
 import {useSetRecoilState} from 'recoil';
 import {useTailwind} from 'tailwind-rn/dist';
 
@@ -38,7 +42,11 @@ export function HSHeaderLeft() {
   );
 }
 
-export function HSHeaderRight() {
+export function HSHeaderRight({
+  navigation,
+}: {
+  navigation: NativeStackNavigationProp<TabOneParamList, 'HSTrackingDetail'>;
+}) {
   const tailwind = useTailwind();
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -53,12 +61,15 @@ export function HSHeaderRight() {
     }
 
     const insertDelivery = await insDelivery(packageDelivery, packageCode);
-    if (insertDelivery) {
+    if (insertDelivery.rowsAffected > 0) {
       setPackageCode('');
       setModalVisible(false);
       setDeliveriesForceLoad(Math.random());
+
+      const delivery = await slDeliveryById(String(insertDelivery.insertId));
+      navigation.navigate('HSTrackingDetail', {delivery});
     }
-  }, [packageCode, packageDelivery, setDeliveriesForceLoad]);
+  }, [navigation, packageCode, packageDelivery, setDeliveriesForceLoad]);
 
   return (
     <View style={tailwind('flex-row justify-center items-center')}>
@@ -66,7 +77,7 @@ export function HSHeaderRight() {
         style={tailwind('rounded-full')}
         styleInside={tailwind('rounded-full p-1')}
         onPress={() => setModalVisible(true)}>
-        <PlusCircle stroke="#000" fill="#fff" width={18} height={18} />
+        <PlusCircle stroke="#000" width={18} height={18} />
       </Ripple>
       <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}>
         <View style={tailwind('w-11/12 bg-white rounded-md p-6 pb-8')}>
@@ -80,5 +91,48 @@ export function HSHeaderRight() {
         </View>
       </Modal>
     </View>
+  );
+}
+
+/* HSHeaderTrackingDetail -----
+ * ----------------------------
+ * ----------------------------
+ */
+
+export function HSHeaderTrackingDetailLeft({
+  route,
+}: {
+  route: RouteProp<TabOneParamList, 'HSTrackingDetail'>;
+}) {
+  const tailwind = useTailwind();
+  const {delivery} = route.params;
+
+  return (
+    <View style={tailwind('w-full bg-transparent')}>
+      <OpenSansText
+        numberOfLines={1}
+        style={tailwind('text-blue-800 text-sm font-bold tracking-wider')}>
+        {capitalizeFirstLetter(delivery?.title_delivery)}
+      </OpenSansText>
+      <OpenSansText numberOfLines={1} style={tailwind('w-8/12 text-xs')}>
+        {delivery?.code_delivery} | {delivery?.name_delivery}
+      </OpenSansText>
+    </View>
+  );
+}
+
+export function HSHeaderTrackingDetailRight() {
+  const tailwind = useTailwind();
+  const setRequestTrackingReload = useSetRecoilState(
+    requestTrackingReloadState,
+  );
+
+  return (
+    <Ripple
+      style={tailwind('rounded-full')}
+      styleInside={tailwind('rounded-full p-1')}
+      onPress={() => setRequestTrackingReload(Math.random())}>
+      <RotateCcw stroke="#000" width={18} height={18} />
+    </Ripple>
   );
 }

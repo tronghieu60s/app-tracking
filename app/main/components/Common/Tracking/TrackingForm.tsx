@@ -45,7 +45,7 @@ export default function TrackingForm(props: Props) {
 
   return (
     <View>
-      <OpenSansText style={tailwind('text-base font-semibold')}>
+      <OpenSansText style={tailwind('capitalize text-base font-semibold')}>
         {I18n.t('app.tracking.title')}
       </OpenSansText>
       <View style={tailwind('flex flex-row items-center px-2 mt-6')}>

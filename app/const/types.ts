@@ -32,6 +32,8 @@ export type DeliveryType = {
   url_delivery?: string;
   active_delivery?: boolean;
   captcha_delivery?: boolean;
+  created_at?: string;
+  updated_at?: string;
 };
 
 export type UserDeliveryType = DeliveryType & {
