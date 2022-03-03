@@ -9,7 +9,10 @@ import {useTailwind} from 'tailwind-rn/dist';
 export default function SSApplicationInfo() {
   const tailwind = useTailwind();
   return (
-    <View style={tailwind('flex-1 justify-between items-center px-10 py-10')}>
+    <View
+      style={tailwind(
+        'bg-white flex-1 justify-between items-center px-10 py-10',
+      )}>
       <View style={tailwind('w-full bg-transparent items-center')}>
         <Image
           style={tailwind('w-20 h-20 rounded-full')}

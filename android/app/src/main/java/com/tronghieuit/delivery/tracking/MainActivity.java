@@ -1,4 +1,4 @@
-package com.awesometsproject;
+package com.tronghieuit.delivery.tracking;
 
 import android.os.Bundle;
 
@@ -12,6 +12,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "AwesomeTSProject";
+    return "DeliveryTracking";
   }
 }

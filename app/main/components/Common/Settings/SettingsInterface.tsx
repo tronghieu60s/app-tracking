@@ -42,7 +42,9 @@ export default function SettingsInterface() {
       <SSItemSelect
         title={I18n.t('app.setting.interfaceLang.title')}
         description={`${I18n.t('app.setting.interfaceLang.description')} ${
-          languages[I18n.currentLocale().slice(0, 2) as 'en' | 'vi'].name
+          languages[
+            I18n.currentLocale().slice(0, 2) as keyof typeof translations
+          ].name
         }.`}
         onPress={() => setModalVisible(true)}
       />
