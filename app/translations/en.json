@@ -7,6 +7,8 @@
     "app.tab.setting.information": "Application Information",
 
     "app.setting.interface": "Interface settings",
+    "app.setting.interfaceTracking": "Are you missing a shipping unit? Just contact us:",
+    "app.setting.interfaceTracking.title": "Look up your order here!",
     "app.setting.interfaceLang.title": "Language",
     "app.setting.interfaceLang.description": "Current language is",
     "app.setting.interfaceDark.title": "Dark mode",

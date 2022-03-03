@@ -27,7 +27,7 @@ export default function Modal(props: Props) {
             {backgroundColor: 'rgba(0, 0, 0, 0.5);'},
           ]}>
           <TouchableWithoutFeedback>
-            <View style={tailwind('w-11/12 bg-white rounded-md p-4')}>
+            <View style={tailwind('w-full justify-center items-center')}>
               {children}
             </View>
           </TouchableWithoutFeedback>

@@ -4,9 +4,10 @@ import {Ripple} from '@components/Base/Theme';
 import {SSItemSelect} from '@components/SettingScreen/SSComponents';
 import {objToArrByKey} from '@core/commonFuncs';
 import I18n, {translations} from '@core/i18n';
+import {APP_PUBLISHER_EMAIL} from '@env';
 import {languageState} from '@reducers/baseReducer';
 import React, {useCallback, useState} from 'react';
-import {Image, View} from 'react-native';
+import {Image, Linking, View} from 'react-native';
 import RNRestart from 'react-native-restart';
 import {useSetRecoilState} from 'recoil';
 import {useTailwind} from 'tailwind-rn';
@@ -46,7 +47,7 @@ export default function SettingsInterface() {
         onPress={() => setModalVisible(true)}
       />
       <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}>
-        <View style={tailwind('w-full')}>
+        <View style={tailwind('w-9/12 bg-white rounded-md px-8 py-4')}>
           {objToArrByKey(languages).map(({key, name, image}) => (
             <Ripple key={key} onPress={() => setChangeLanguage(key)}>
               <View
@@ -60,6 +61,14 @@ export default function SettingsInterface() {
           ))}
         </View>
       </Modal>
+      <OpenSansText style={tailwind('text-xs my-2')}>
+        {I18n.t('app.setting.interfaceTracking')}{' '}
+        <OpenSansText
+          style={tailwind('underline')}
+          onPress={() => Linking.openURL(`mailto:${APP_PUBLISHER_EMAIL}`)}>
+          {APP_PUBLISHER_EMAIL}
+        </OpenSansText>
+      </OpenSansText>
     </View>
   );
 }

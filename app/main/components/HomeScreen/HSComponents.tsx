@@ -48,6 +48,7 @@ export function HSHeaderRight() {
   const onPress = useCallback(async () => {
     const insertDelivery = await insDelivery(packageDelivery, packageCode);
     if (insertDelivery) {
+      setPackageCode('');
       setModalVisible(false);
       setDeliveriesForceLoad(Math.random());
     }
@@ -61,24 +62,14 @@ export function HSHeaderRight() {
         onPress={() => setModalVisible(true)}>
         <PlusCircle stroke="#000" fill="#fff" width={18} height={18} />
       </Ripple>
-      <Modal
-        animationType="slide"
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}>
-        <View style={tailwind('p-4 pb-7')}>
-          <OpenSansText
-            style={tailwind(
-              'capitalize text-center text-xl text-slate-800 font-bold mb-5',
-            )}>
-            Tra cứu mã vận đơn
-          </OpenSansText>
+      <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}>
+        <View style={tailwind('w-11/12 bg-white rounded-md px-6 py-8')}>
           <TrackingForm
             packageCode={packageCode}
             setPackageCode={setPackageCode}
             packageDelivery={packageDelivery}
             setPackageDelivery={setPackageDelivery}
             onPress={onPress}
-            setModalVisible={setModalVisible}
           />
         </View>
       </Modal>

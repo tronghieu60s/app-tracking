@@ -1,5 +1,5 @@
-import SettingInterface from '@components/Common/Settings/SettingInterface';
-import SettingCommunity from '@components/Common/Settings/SettingsCommunity';
+import SettingsInterface from '@components/Common/Settings/SettingsInterface';
+import SettingsCommunity from '@components/Common/Settings/SettingsCommunity';
 import SettingsOthers from '@components/Common/Settings/SettingsOthers';
 import I18n from '@core/i18n';
 import React from 'react';
@@ -14,11 +14,11 @@ export default function SettingsScreen() {
       <View style={tailwind('bg-transparent my-1 mx-1.5')}>
         <SSItem
           title={I18n.t('app.setting.interface')}
-          children={<SettingInterface />}
+          children={<SettingsInterface />}
         />
         <SSItem
           title={I18n.t('app.setting.community')}
-          children={<SettingCommunity />}
+          children={<SettingsCommunity />}
         />
         <SSItem
           title={I18n.t('app.setting.others')}

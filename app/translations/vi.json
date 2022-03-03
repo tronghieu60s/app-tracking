@@ -7,6 +7,8 @@
     "app.tab.setting.information": "Thông Tin Ứng Dụng",
 
     "app.setting.interface": "Cài đặt giao diện",
+    "app.setting.interfaceTracking": "Bạn đang bị thiếu một đơn vị vận chuyển? Chỉ cần liên hệ với chúng tôi:",
+    "app.setting.interfaceTracking.title": "Tra cứu đơn hàng của bạn tại đây!",
     "app.setting.interfaceLang.title": "Ngôn ngữ",
     "app.setting.interfaceLang.description": "Ngôn ngữ hiện tại là",
     "app.setting.interfaceDark.title": "Giao diện tối",

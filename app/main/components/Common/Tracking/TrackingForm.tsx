@@ -2,10 +2,12 @@ import {OpenSansText} from '@components/Base/StyledText';
 import {Ripple} from '@components/Base/Theme';
 import {DeliveryType} from '@const/types';
 import {slDeliveries} from '@core/models';
+import {APP_PUBLISHER_EMAIL} from '@env';
 import {Picker} from '@react-native-picker/picker';
+import I18n from 'i18n-js';
 import React, {useCallback, useEffect, useState} from 'react';
-import {TextInput, View} from 'react-native';
-import {Package, Truck} from 'react-native-feather';
+import {Linking, TextInput, View} from 'react-native';
+import {Activity, Package} from 'react-native-feather';
 import {useTailwind} from 'tailwind-rn';
 
 type Props = {
@@ -13,9 +15,7 @@ type Props = {
   setPackageCode: (packageCode: string) => void;
   packageDelivery: string;
   setPackageDelivery: (packageDelivery: string) => void;
-
   onPress: () => void;
-  setModalVisible: (modalVisible: boolean) => void;
 };
 
 export default function TrackingForm(props: Props) {
@@ -45,12 +45,15 @@ export default function TrackingForm(props: Props) {
 
   return (
     <View>
-      <View style={tailwind('flex flex-row items-center')}>
+      <OpenSansText style={tailwind('text-base font-semibold')}>
+        {I18n.t('app.setting.interfaceTracking.title')}
+      </OpenSansText>
+      <View style={tailwind('flex flex-row items-center px-2 mt-6')}>
         <Package
           stroke="#000"
           fill="#fff"
-          width={25}
-          height={25}
+          width={20}
+          height={20}
           style={tailwind('mr-4')}
         />
         <TextInput
@@ -62,43 +65,43 @@ export default function TrackingForm(props: Props) {
           )}
         />
       </View>
-      <View style={tailwind('flex flex-row items-center mt-5')}>
-        <Truck
+      <View style={tailwind('flex flex-row items-center px-2 mt-5')}>
+        <Activity
           stroke="#000"
           fill="#fff"
-          width={25}
-          height={25}
+          width={20}
+          height={20}
           style={tailwind('mr-4')}
         />
         <View
-          style={tailwind('flex-1 border border-slate-700 rounded-md h-12')}>
+          style={tailwind('flex-1 border border-slate-700 rounded-md h-11')}>
           <Picker
             selectedValue={props.packageDelivery}
             onValueChange={itemValue => props.setPackageDelivery(itemValue)}
             style={{
-              transform: [{scaleX: 0.9}, {scaleY: 0.9}, {translateY: -5}],
+              transform: [{scaleX: 0.85}, {scaleY: 0.85}, {translateY: -7}],
             }}>
             {renderPickerItems()}
           </Picker>
         </View>
       </View>
-      <View style={tailwind('flex-row justify-center mt-8')}>
+      <View style={tailwind('mt-6')}>
         <Ripple
-          style={tailwind('w-10/12 rounded-md mr-2')}
+          style={tailwind('w-full rounded-md')}
           styleInside={tailwind('rounded-md bg-blue-600 p-2')}
           onPress={props.onPress}>
           <OpenSansText style={tailwind('text-sm text-white self-center')}>
             Tra cứu đơn hàng
           </OpenSansText>
         </Ripple>
-        <Ripple
-          style={tailwind('w-2/12 rounded-md')}
-          styleInside={tailwind('rounded-md bg-red-600 p-2')}
-          onPress={() => props.setModalVisible(false)}>
-          <OpenSansText style={tailwind('text-sm text-white self-center')}>
-            Hủy
+        <OpenSansText style={tailwind('text-xs mt-4')}>
+          {I18n.t('app.setting.interfaceTracking')}{' '}
+          <OpenSansText
+            style={tailwind('underline')}
+            onPress={() => Linking.openURL(`mailto:${APP_PUBLISHER_EMAIL}`)}>
+            {APP_PUBLISHER_EMAIL}
           </OpenSansText>
-        </Ripple>
+        </OpenSansText>
       </View>
     </View>
   );
