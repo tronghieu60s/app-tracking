@@ -17,14 +17,14 @@ export default function BottomTabIcon(props: Props): JSX.Element {
   const tailwind = useTailwind();
 
   const tabBar = tabBarBottom[route.name];
-  const tabBarColor = focused ? '#000' : '#737373';
+  const tabBarColor = focused ? '#000' : 'rgb(107, 114, 128)';
 
   // @ts-ignore
   const Icon = Icons[tabBar.icon];
 
   return (
     <View style={tailwind('bg-transparent items-center justify-center mt-0.5')}>
-      <Icon stroke={tabBarColor} fill="#fff" width={18} height={18} />
+      <Icon stroke={tabBarColor} width={18} height={18} />
       <OpenSansText
         style={[
           tailwind('font-semibold mt-0.5'),

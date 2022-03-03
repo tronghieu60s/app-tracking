@@ -26,5 +26,6 @@
     "app.setting.others.information.appDataVersion": "Application data version",
     "app.setting.others.backupRestore": "Backup and restore",
 
+    "app.common.emptyData": "No data found.",
     "app.common.loading": "Loading..."
 }

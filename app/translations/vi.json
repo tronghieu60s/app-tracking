@@ -26,5 +26,6 @@
     "app.setting.others.information.appDataVersion": "Phiên bản dữ liệu ứng dụng",
     "app.setting.others.backupRestore": "Sao lưu và khôi phục",
 
+    "app.common.emptyData": "Không có dữ liệu nào được tìm thấy.",
     "app.common.loading": "Đang tải..."
 }

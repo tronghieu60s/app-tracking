@@ -1,3 +1,4 @@
+import EmptyScreen from '@components/Base/Screens/EmptyScreen';
 import Tracking from '@components/Common/Tracking';
 import {UserDeliveryType} from '@const/types';
 import {delDeliveryById} from '@core/models';
@@ -24,6 +25,10 @@ export default function HSTracking() {
     },
     [setDeliveriesForceLoad],
   );
+
+  if (deliveries.length === 0) {
+    return <EmptyScreen />;
+  }
 
   return (
     <View style={tailwind('flex-1 bg-neutral-100')}>

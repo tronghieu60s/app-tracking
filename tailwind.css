@@ -102,6 +102,10 @@
   margin-top: 1.5rem
 }
 
+.mt-3 {
+  margin-top: 0.75rem
+}
+
 .flex {
   display: flex
 }
@@ -124,6 +128,10 @@
 
 .h-11 {
   height: 2.75rem
+}
+
+.h-full {
+  height: 100%
 }
 
 .w-full {
@@ -168,6 +176,10 @@
 
 .w-9\/12 {
   width: 75%
+}
+
+.w-7\/12 {
+  width: 58.333333%
 }
 
 .flex-1 {
@@ -253,6 +265,11 @@
 .bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity))
+}
+
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity))
 }
 
 .p-1 {
@@ -371,6 +388,11 @@
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem
 }
 
 .pb-7 {
