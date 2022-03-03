@@ -6,9 +6,17 @@
     "app.tab.setting": "Setting",
     "app.tab.setting.information": "Application Information",
 
+    "app.tracking.title": "Look up your order here!",
+    "app.tracking.edit.title": "Edit tracking information",
+    "app.tracking.add.button.placeholder": "Track order",
+    "app.tracking.edit.button.placeholder": "Edit tracking",
+    "app.tracking.packageCode.required": "Please enter your tracking number.",
+    "app.tracking.packageName.required": "Please enter your tracking name.",
+    "app.tracking.codeInput.placeholder": "Tracking number",
+    "app.tracking.nameInput.placeholder": "Tracking name",
+
     "app.setting.interface": "Interface settings",
     "app.setting.interfaceTracking": "Are you missing a shipping unit? Just contact us:",
-    "app.setting.interfaceTracking.title": "Look up your order here!",
     "app.setting.interfaceLang.title": "Language",
     "app.setting.interfaceLang.description": "Current language is",
     "app.setting.interfaceDark.title": "Dark mode",

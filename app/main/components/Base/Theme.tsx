@@ -19,7 +19,7 @@ export function Ripple(props: RippleProps) {
   const {
     style,
     styleInside,
-    rippleColor = '#64748B',
+    rippleColor = 'rgb(163, 163, 163)',
     onPress,
     children,
     ...otherProps

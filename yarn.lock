@@ -1513,10 +1513,25 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-native-loading-spinner-overlay@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@types/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-0.5.3.tgz#babb9a30fa4fb6abac1dae057209a891208c6dcf"
+  integrity sha512-TP6//QhdBEUQT0sB9iG3+a+YKsMzP4/MJNNxSyfWsbdDTbBnO0lD9ksXdwBI5KY91r8gTmBE7PwRS+eEazZpxg==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
 "@types/react-native-sqlite-storage@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@types/react-native-sqlite-storage/-/react-native-sqlite-storage-5.0.1.tgz#20a0862eaa52de83c9698bdd597f2114349b563a"
   integrity sha512-M4KDSFeHVVh0qiV9WvNr5e5VonRDzYpDqBQCFPtmDAVHRoUBNWxeSQETZ+BNF8jGavxN0u/FMbOQWGo+7UwRaA==
+
+"@types/react-native@*":
+  version "0.67.1"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.67.1.tgz#b11dad862c850e2556caaf252ad87cff12502f0b"
+  integrity sha512-uUlyohC91eQN0FWYq1pyYFSbwbnIDFjYSoc3ILieRfnH1epvSDXcSklfCVYjDizoD3ByWu2h5Yk6HbcbRJ4oGw==
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-native@^0.66.15":
   version "0.66.15"
@@ -6069,7 +6084,7 @@ prompts@^2.0.1, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -6197,10 +6212,12 @@ react-native-keep-awake@^4.0.0:
   resolved "https://registry.yarnpkg.com/react-native-keep-awake/-/react-native-keep-awake-4.0.0.tgz#d89fdc3fb60b3cffa979ef37dc5816196df998a2"
   integrity sha512-0Fotox+eLXQooeibVs3P60yASYUWjtRw9MZNmbuHt5UZQrgUrAKsE4jm7gTr4tPU1m1RkwGzcgUFpcOkh/ec7g==
 
-react-native-loading-spinner-overlay@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-3.0.0.tgz#20df946b2d6a70a6e957a74473200ff660732e56"
-  integrity sha512-SmRCmfY795/Jxm9JHoyE0I6ry9uBT7m/RYAPNm0vlfZr9dz39HlzIt4h0MvcZvgSmUjEkHm6DzWnuWSO1yKr4A==
+react-native-loading-spinner-overlay@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-2.0.0.tgz#30934b6f07cb39711020d6b422a02a2a56763a73"
+  integrity sha512-V38M+N1Wk9GlpbfrD6znsJA1K2+09b3naxq3UjDjqNTA3MOBfj4W87alKSI3P+4ZawczQASTv2fTzhEQ7Z+SVA==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-native-restart@^0.0.24:
   version "0.0.24"

@@ -6,9 +6,17 @@
     "app.tab.setting": "Cài Đặt",
     "app.tab.setting.information": "Thông Tin Ứng Dụng",
 
+    "app.tracking.title": "Tra cứu đơn hàng của bạn tại đây!",
+    "app.tracking.edit.title": "Chỉnh sửa thông tin vận đơn",
+    "app.tracking.add.button.placeholder": "Tra cứu đơn hàng",
+    "app.tracking.edit.button.placeholder": "Sửa vận đơn",
+    "app.tracking.packageCode.required": "Vui lòng nhập mã vận đơn của bạn.",
+    "app.tracking.packageName.required": "Vui lòng nhập tên vận đơn của bạn.",
+    "app.tracking.codeInput.placeholder": "Mã vận đơn",
+    "app.tracking.nameInput.placeholder": "Tên vận đơn",
+
     "app.setting.interface": "Cài đặt giao diện",
     "app.setting.interfaceTracking": "Bạn đang bị thiếu một đơn vị vận chuyển? Chỉ cần liên hệ với chúng tôi:",
-    "app.setting.interfaceTracking.title": "Tra cứu đơn hàng của bạn tại đây!",
     "app.setting.interfaceLang.title": "Ngôn ngữ",
     "app.setting.interfaceLang.description": "Ngôn ngữ hiện tại là",
     "app.setting.interfaceDark.title": "Giao diện tối",

@@ -8,6 +8,7 @@ import {useTailwind} from 'tailwind-rn';
 
 type Props = {
   delivery: UserDeliveryType;
+  onPressEdit: () => void;
   onPressDelete: () => void;
 };
 
@@ -16,7 +17,7 @@ export default function TrackingListItem(props: Props) {
 
   return (
     <Ripple
-      style={tailwind('rounded-lg bg-white mb-2')}
+      style={tailwind('rounded-lg bg-white my-1')}
       styleInside={tailwind('rounded-lg p-4 pb-5')}>
       <View style={tailwind('flex-row justify-between items-center')}>
         <View style={tailwind('w-8/12')}>
@@ -54,7 +55,8 @@ export default function TrackingListItem(props: Props) {
         <View style={tailwind('w-4/12 flex-row justify-end')}>
           <Ripple
             style={tailwind('rounded-full mr-2')}
-            styleInside={tailwind('rounded-full p-1')}>
+            styleInside={tailwind('rounded-full p-1')}
+            onPress={props.onPressEdit}>
             <Edit stroke="#000" fill="#fff" width={16} height={16} />
           </Ripple>
           <Ripple

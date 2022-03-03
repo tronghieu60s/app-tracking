@@ -46,7 +46,7 @@ export default function TrackingForm(props: Props) {
   return (
     <View>
       <OpenSansText style={tailwind('text-base font-semibold')}>
-        {I18n.t('app.setting.interfaceTracking.title')}
+        {I18n.t('app.tracking.title')}
       </OpenSansText>
       <View style={tailwind('flex flex-row items-center px-2 mt-6')}>
         <Package
@@ -59,13 +59,13 @@ export default function TrackingForm(props: Props) {
         <TextInput
           value={props.packageCode}
           onChangeText={props.setPackageCode}
-          placeholder="Mã vận đơn"
+          placeholder={I18n.t('app.tracking.codeInput.placeholder')}
           style={tailwind(
-            'flex-1 border border-slate-700 rounded-md px-3 py-2',
+            'flex-1 border border-slate-700 rounded-md px-3 h-11',
           )}
         />
       </View>
-      <View style={tailwind('flex flex-row items-center px-2 mt-5')}>
+      <View style={tailwind('flex flex-row items-center px-2 mt-6')}>
         <Activity
           stroke="#000"
           fill="#fff"
@@ -79,7 +79,12 @@ export default function TrackingForm(props: Props) {
             selectedValue={props.packageDelivery}
             onValueChange={itemValue => props.setPackageDelivery(itemValue)}
             style={{
-              transform: [{scaleX: 0.85}, {scaleY: 0.85}, {translateY: -7}],
+              transform: [
+                {scaleX: 0.85},
+                {scaleY: 0.85},
+                {translateX: -10},
+                {translateY: -7},
+              ],
             }}>
             {renderPickerItems()}
           </Picker>
@@ -90,8 +95,9 @@ export default function TrackingForm(props: Props) {
           style={tailwind('w-full rounded-md')}
           styleInside={tailwind('rounded-md bg-blue-600 p-2')}
           onPress={props.onPress}>
-          <OpenSansText style={tailwind('text-sm text-white self-center')}>
-            Tra cứu đơn hàng
+          <OpenSansText
+            style={tailwind('capitalize text-sm text-white self-center')}>
+            {I18n.t('app.tracking.add.button.placeholder')}
           </OpenSansText>
         </Ripple>
         <OpenSansText style={tailwind('text-xs mt-4')}>

@@ -39,3 +39,15 @@ export const delDeliveryById = async (id_tracking: string) => {
   ]);
   return deleteValue.rowsAffected > 0;
 };
+
+/* Update Database */
+export const udDeliveryById = async (
+  {title_delivery}: {title_delivery: string},
+  id_tracking: string,
+) => {
+  const updateValue = await executeSql(Query.QueryUpdateDeliveryById, [
+    title_delivery,
+    id_tracking,
+  ]);
+  return updateValue.rowsAffected > 0;
+};

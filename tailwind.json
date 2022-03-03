@@ -227,6 +227,16 @@
 			"width": "58.333333%"
 		}
 	},
+	"w-52": {
+		"style": {
+			"width": 208
+		}
+	},
+	"w-32": {
+		"style": {
+			"width": 128
+		}
+	},
 	"flex-1": {
 		"style": {
 			"flexGrow": 1,
@@ -249,6 +259,11 @@
 	"items-start": {
 		"style": {
 			"alignItems": "flex-start"
+		}
+	},
+	"items-end": {
+		"style": {
+			"alignItems": "flex-end"
 		}
 	},
 	"items-center": {
@@ -413,6 +428,14 @@
 			"paddingLeft": 24
 		}
 	},
+	"p-2.5": {
+		"style": {
+			"paddingTop": 10,
+			"paddingRight": 10,
+			"paddingBottom": 10,
+			"paddingLeft": 10
+		}
+	},
 	"px-10": {
 		"style": {
 			"paddingLeft": 40,
@@ -535,6 +558,16 @@
 	"pb-5": {
 		"style": {
 			"paddingBottom": 20
+		}
+	},
+	"pt-6": {
+		"style": {
+			"paddingTop": 24
+		}
+	},
+	"pb-8": {
+		"style": {
+			"paddingBottom": 32
 		}
 	},
 	"text-center": {

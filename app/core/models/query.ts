@@ -37,3 +37,7 @@ export const QueryInsertDelivery = `insert into user_deliveries (id_delivery, co
 /* Delete Database */
 export const QueryDeleteDeliveryById =
   'delete from user_deliveries where id_tracking = ?;';
+
+/* Update Database */
+export const QueryUpdateDeliveryById =
+  'update user_deliveries set title_delivery = ? where id_tracking = ?;';

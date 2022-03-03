@@ -2,6 +2,7 @@ import Modal from '@components/Base/Common/Modal';
 import {OpenSansText} from '@components/Base/StyledText';
 import {Ripple} from '@components/Base/Theme';
 import TrackingForm from '@components/Common/Tracking/TrackingForm';
+import {toast} from '@core/commonFuncs';
 import I18n from '@core/i18n';
 import {insDelivery} from '@core/models';
 import {APP_PUBLISHER_NAME} from '@env';
@@ -40,12 +41,17 @@ export function HSHeaderLeft() {
 export function HSHeaderRight() {
   const tailwind = useTailwind();
   const [modalVisible, setModalVisible] = useState(false);
+
   const setDeliveriesForceLoad = useSetRecoilState(deliveriesForceLoadState);
 
   const [packageCode, setPackageCode] = useState('');
   const [packageDelivery, setPackageDelivery] = useState('');
 
   const onPress = useCallback(async () => {
+    if (packageCode.length === 0) {
+      return toast(I18n.t('app.tracking.packageCode.required'));
+    }
+
     const insertDelivery = await insDelivery(packageDelivery, packageCode);
     if (insertDelivery) {
       setPackageCode('');
@@ -63,7 +69,7 @@ export function HSHeaderRight() {
         <PlusCircle stroke="#000" fill="#fff" width={18} height={18} />
       </Ripple>
       <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}>
-        <View style={tailwind('w-11/12 bg-white rounded-md px-6 py-8')}>
+        <View style={tailwind('w-11/12 bg-white rounded-md p-6 pb-8')}>
           <TrackingForm
             packageCode={packageCode}
             setPackageCode={setPackageCode}
