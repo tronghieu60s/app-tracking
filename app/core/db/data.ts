@@ -1,13 +1,12 @@
 import {DeliveryType} from '@const/types';
 import {
   QueryDropDeliveries,
-  QueryDropUserDeliveries,
   QueryInitDeliveries,
   QueryInitUserDeliveries,
 } from '../models/query';
 import {executeSql} from './sqlite';
 
-const deliveries = require('@assets/resources/tracking-delivery.json');
+const deliveries = require('@assets/resources/deliveries.json');
 
 export const initDBTable = async () => {
   // User

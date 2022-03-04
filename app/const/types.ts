@@ -44,3 +44,8 @@ export type UserDeliveryType = DeliveryType & {
   created_at?: string;
   updated_at?: string;
 };
+
+export type DeliveryTypeExample = {
+  id_delivery: string;
+  code_delivery?: string;
+};

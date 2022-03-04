@@ -4,6 +4,7 @@ import {
   HSHeaderLeft,
   HSHeaderRight,
   HSHeaderTrackingDetailLeft,
+  HSHeaderTrackingDetailLogRight,
   HSHeaderTrackingDetailRight,
 } from '@components/HomeScreen/HSComponents';
 import HSTrackingDetail from '@components/HomeScreen/HSTrackingDetail';
@@ -32,14 +33,17 @@ export default function TabOneNavigator() {
         name="HSTrackingDetail"
         options={({route}: {route: any}) => ({
           headerTitle: () => <HSHeaderTrackingDetailLeft route={route} />,
-          headerRight: () => <HSHeaderTrackingDetailRight />,
+          headerRight: () => <HSHeaderTrackingDetailRight route={route} />,
         })}>
         {() => <Suspense children={<HSTrackingDetail />} />}
       </TabOneStack.Screen>
       <TabOneStack.Screen
         name="HSTrackingDetailLog"
-        options={({route}: {route: any}) => ({
+        options={({route, navigation}: {route: any; navigation: any}) => ({
           headerTitle: () => <HSHeaderTrackingDetailLeft route={route} />,
+          headerRight: () => (
+            <HSHeaderTrackingDetailLogRight navigation={navigation} />
+          ),
         })}>
         {() => <Suspense children={<HSTrackingDetailLog />} />}
       </TabOneStack.Screen>

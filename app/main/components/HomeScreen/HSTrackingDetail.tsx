@@ -12,7 +12,7 @@ import {Alert, View} from 'react-native';
 import {AlertOctagon} from 'react-native-feather';
 import {WebView} from 'react-native-webview';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import {useTailwind} from 'tailwind-rn/dist';
+import {useTailwind} from 'tailwind-rn';
 
 export default function HSTrackingDetail() {
   const tailwind = useTailwind();
@@ -28,10 +28,14 @@ export default function HSTrackingDetail() {
   const requestTrackingReload = useRecoilValue(requestTrackingReloadState);
 
   useEffect(() => {
+    setLogTracking('');
     if (delivery.captcha_delivery === 1) {
-      Alert.alert(I18n.t('app.tracking.alert'), I18n.t('app.tracking.captcha'));
+      Alert.alert(
+        I18n.t('app.tracking.alert'),
+        I18n.t('app.tracking.alert.captcha'),
+      );
     }
-  }, [delivery]);
+  }, [delivery, setLogTracking]);
 
   useEffect(() => {
     if (webViewRef.current) {
@@ -56,17 +60,18 @@ export default function HSTrackingDetail() {
       if (dataPayload) {
         if (dataPayload.type === 'Console') {
           setLogTracking(
-            logTracking + `\n[Console] ${JSON.stringify(dataPayload.data)}`,
+            logTracking + `[Console] ${JSON.stringify(dataPayload.data)}\n`,
           );
         } else {
-          setLogTracking(logTracking + `\n${dataPayload}`);
+          setLogTracking(logTracking + `${dataPayload}\n`);
         }
       }
     },
     [logTracking, setLogTracking],
   );
 
-  const scripts = `(function() {
+  const injectedJavaScript = useMemo(
+    () => `(function() {
     const consoleLog = (type, log) => window.ReactNativeWebView.postMessage(JSON.stringify({'type': 'Console', 'data': {'type': type, 'log': log}}));
     console = {
       log: (log) => consoleLog('log', log),
@@ -75,22 +80,29 @@ export default function HSTrackingDetail() {
       warn: (log) => consoleLog('warn', log),
       error: (log) => consoleLog('error', log),
     };
-  })();`;
+  })();`,
+    [],
+  );
 
   return (
     <View style={tailwind('flex-1')}>
       <WebView
         ref={ref => (webViewRef.current = ref)}
         source={{uri: webviewUrl}}
-        injectedJavaScript={scripts}
+        injectedJavaScript={injectedJavaScript}
         onMessage={onMessage}
+        scalesPageToFit={false}
       />
-      <Ripple
-        style={tailwind('rounded-full absolute bottom-5 right-5')}
-        styleInside={tailwind('bg-blue-800 rounded-full p-3')}
-        onPress={() => navigation.navigate('HSTrackingDetailLog', {delivery})}>
-        <AlertOctagon stroke="#fff" width={18} height={18} />
-      </Ripple>
+      {logTracking.length !== 0 && (
+        <Ripple
+          style={tailwind('rounded-full absolute bottom-5 right-5')}
+          styleInside={tailwind('bg-blue-800 rounded-full p-3')}
+          onPress={() =>
+            navigation.navigate('HSTrackingDetailLog', {delivery})
+          }>
+          <AlertOctagon stroke="#fff" width={18} height={18} />
+        </Ripple>
+      )}
     </View>
   );
 }

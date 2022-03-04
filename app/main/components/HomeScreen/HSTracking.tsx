@@ -14,8 +14,10 @@ import React, {useCallback, useState} from 'react';
 import {View} from 'react-native';
 import {useRecoilValue, useSetRecoilState} from 'recoil';
 import {useTailwind} from 'tailwind-rn';
+import {useNetInfo} from '@react-native-community/netinfo';
 
 export default function HSTracking() {
+  const netInfo = useNetInfo();
   const tailwind = useTailwind();
   const navigation =
     useNavigation<NativeStackNavigationProp<TabOneParamList, 'TabOneScreen'>>();
@@ -24,6 +26,16 @@ export default function HSTracking() {
   const deliveries = useRecoilValue(deliveriesState);
   const setDeliveriesForceLoad = useSetRecoilState(deliveriesForceLoadState);
   const [deliverySelected, setDeliverySelected] = useState(deliveries?.[0]);
+
+  const onPressItem = useCallback(
+    (delivery: UserDeliveryType) => {
+      if (netInfo.isConnected) {
+        return navigation.navigate('HSTrackingDetail', {delivery});
+      }
+      toast(I18n.t('app.tracking.toast.noInternet'));
+    },
+    [navigation, netInfo.isConnected],
+  );
 
   const onPressEdit = useCallback((delivery: UserDeliveryType) => {
     setModalVisible(true);
@@ -67,9 +79,7 @@ export default function HSTracking() {
         deliveries={deliveries}
         deliverySelected={deliverySelected}
         setDeliverySelected={setDeliverySelected}
-        onPressItem={(delivery: UserDeliveryType) =>
-          navigation.navigate('HSTrackingDetail', {delivery})
-        }
+        onPressItem={onPressItem}
         onPressEdit={onPressEdit}
         onPressHandleEdit={onPressHandleEdit}
         onPressDelete={onPressDelete}

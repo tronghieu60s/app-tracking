@@ -2,7 +2,7 @@ import Modal from '@components/Base/Common/Modal';
 import {OpenSansText} from '@components/Base/StyledText';
 import {Ripple} from '@components/Base/Theme';
 import TrackingForm from '@components/Common/Tracking/TrackingForm';
-import {DeliveryType, TabOneParamList} from '@const/types';
+import {DeliveryTypeExample, TabOneParamList} from '@const/types';
 import {capitalizeFirstLetter, toast} from '@core/commonFuncs';
 import {loadNewDataDBTable} from '@core/db/data';
 import I18n from '@core/i18n';
@@ -10,18 +10,20 @@ import {insDelivery, slDeliveryByCode, slDeliveryById} from '@core/models';
 import {APP_PUBLISHER_NAME} from '@env';
 import {RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {requestTrackingReloadState} from '@reducers/commonReducer';
+import {
+  logTrackingState,
+  requestTrackingReloadState,
+} from '@reducers/commonReducer';
 import {deliveriesForceLoadState} from '@reducers/deliveriesReducer';
 import React, {useCallback, useState} from 'react';
 import {Alert, View} from 'react-native';
-import {PlusCircle, RotateCcw} from 'react-native-feather';
+import {Clipboard, PlusCircle, RotateCcw, XOctagon} from 'react-native-feather';
 import RNRestart from 'react-native-restart';
 import {useSetRecoilState} from 'recoil';
 import {useTailwind} from 'tailwind-rn';
+import RNClipboard from '@react-native-community/clipboard';
 
-type DeliveryTypeExample = DeliveryType & {example_code_delivery?: string};
-
-const deliveries: DeliveryTypeExample[] = require('@assets/resources/tracking-delivery.json');
+const deliveries: DeliveryTypeExample[] = require('@assets/resources/ex_deliveries.json');
 
 /* HSHeader -------------------
  * ----------------------------
@@ -71,8 +73,8 @@ export function HSHeaderRight({
     /* Debug Deliveries */
     if (packageCode === 'DEBUG_LOAD_DELIVERIES') {
       for (let index = 0; index < deliveries.length; index += 1) {
-        const {id_delivery, example_code_delivery} = deliveries[index];
-        await insDelivery(id_delivery, example_code_delivery || '');
+        const {id_delivery, code_delivery} = deliveries[index];
+        await insDelivery(id_delivery, code_delivery || '');
       }
       setPackageCode('');
       setModalVisible(false);
@@ -159,18 +161,62 @@ export function HSHeaderTrackingDetailLeft({
   );
 }
 
-export function HSHeaderTrackingDetailRight() {
+export function HSHeaderTrackingDetailRight({
+  route,
+}: {
+  route: RouteProp<TabOneParamList, 'HSTrackingDetail'>;
+}) {
   const tailwind = useTailwind();
+  const {delivery} = route.params;
   const setRequestTrackingReload = useSetRecoilState(
     requestTrackingReloadState,
   );
 
+  const onPressClipboard = useCallback(async () => {
+    RNClipboard.setString(delivery.code_delivery || '');
+    toast(I18n.t('app.tracking.toast.copiedClipboard'));
+  }, [delivery.code_delivery]);
+
+  return (
+    <View style={tailwind('flex-row')}>
+      <Ripple
+        style={tailwind('rounded-full')}
+        styleInside={tailwind('rounded-full p-1')}
+        onPress={() => setRequestTrackingReload(Math.random())}>
+        <RotateCcw stroke="#000" width={18} height={18} />
+      </Ripple>
+      <Ripple
+        style={tailwind('rounded-full ml-2')}
+        styleInside={tailwind('rounded-full p-1')}
+        onPress={onPressClipboard}>
+        <Clipboard stroke="#000" width={18} height={18} />
+      </Ripple>
+    </View>
+  );
+}
+
+/* HSHeaderTrackingDetailLog --
+ * ----------------------------
+ * ----------------------------
+ */
+
+export function HSHeaderTrackingDetailLogRight({
+  navigation,
+}: {
+  navigation: NativeStackNavigationProp<TabOneParamList, 'HSTrackingDetail'>;
+}) {
+  const tailwind = useTailwind();
+  const setLogTracking = useSetRecoilState(logTrackingState);
+
   return (
     <Ripple
-      style={tailwind('rounded-full mr-2')}
+      style={tailwind('rounded-full')}
       styleInside={tailwind('rounded-full p-1')}
-      onPress={() => setRequestTrackingReload(Math.random())}>
-      <RotateCcw stroke="#000" width={18} height={18} />
+      onPress={() => {
+        setLogTracking('');
+        navigation.goBack();
+      }}>
+      <XOctagon stroke="#000" width={18} height={18} />
     </Ripple>
   );
 }

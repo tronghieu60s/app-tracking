@@ -18,7 +18,9 @@
     "app.tracking.codeInput.placeholder": "Nhập mã vận đơn của bạn...",
     "app.tracking.nameInput.placeholder": "Tên vận đơn",
     "app.tracking.alert": "Chú ý",
-    "app.tracking.captcha": "Đơn vị vận chuyển này yêu cầu bạn thực hiện xác thực captcha. Vui lòng thực hiện để tiếp tục tra cứu.",
+    "app.tracking.alert.captcha": "Đơn vị vận chuyển này yêu cầu bạn thực hiện xác thực captcha. Vui lòng thực hiện để tiếp tục tra cứu.",
+    "app.tracking.toast.copiedClipboard": "Đã copy dữ liệu vào clipboard.",
+    "app.tracking.toast.noInternet": "Không có kết nối internet, vui lòng kết nối internet và thử lại.",
 
     "app.setting.interface": "Cài đặt giao diện",
     "app.setting.interfaceTracking": "Bạn đang bị thiếu một đơn vị vận chuyển? Chỉ cần liên hệ với chúng tôi:",
