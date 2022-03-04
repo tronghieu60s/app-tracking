@@ -37,7 +37,7 @@
         "name_delivery": "Shopee Express",
         "description_delivery": "Shopee Express",
         "url_delivery": "https://spx.vn/",
-        "ajax_delivery": false,
+        "ajax_delivery": true,
         "active_delivery": true,
         "captcha_delivery": false,
         "scripts_delivery": "",

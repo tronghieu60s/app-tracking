@@ -4,6 +4,7 @@ import {Ripple} from '@components/Base/Theme';
 import TrackingForm from '@components/Common/Tracking/TrackingForm';
 import {DeliveryType, TabOneParamList} from '@const/types';
 import {capitalizeFirstLetter, toast} from '@core/commonFuncs';
+import {loadNewDataDBTable} from '@core/db/data';
 import I18n from '@core/i18n';
 import {insDelivery, slDeliveryByCode, slDeliveryById} from '@core/models';
 import {APP_PUBLISHER_NAME} from '@env';
@@ -14,6 +15,7 @@ import {deliveriesForceLoadState} from '@reducers/deliveriesReducer';
 import React, {useCallback, useState} from 'react';
 import {Alert, View} from 'react-native';
 import {PlusCircle, RotateCcw} from 'react-native-feather';
+import RNRestart from 'react-native-restart';
 import {useSetRecoilState} from 'recoil';
 import {useTailwind} from 'tailwind-rn';
 
@@ -60,8 +62,14 @@ export function HSHeaderRight({
   const [packageDelivery, setPackageDelivery] = useState('');
 
   const handleSubmit = useCallback(async () => {
+    /* Debug Reset */
+    if (packageCode === 'DEBUG_LOAD_DATA') {
+      loadNewDataDBTable();
+      return RNRestart.Restart();
+    }
+
     /* Debug Deliveries */
-    if (packageCode === 'DEBUG') {
+    if (packageCode === 'DEBUG_LOAD_DELIVERIES') {
       for (let index = 0; index < deliveries.length; index += 1) {
         const {id_delivery, example_code_delivery} = deliveries[index];
         await insDelivery(id_delivery, example_code_delivery || '');
@@ -159,7 +167,7 @@ export function HSHeaderTrackingDetailRight() {
 
   return (
     <Ripple
-      style={tailwind('rounded-full')}
+      style={tailwind('rounded-full mr-2')}
       styleInside={tailwind('rounded-full p-1')}
       onPress={() => setRequestTrackingReload(Math.random())}>
       <RotateCcw stroke="#000" width={18} height={18} />

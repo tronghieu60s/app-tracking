@@ -27,6 +27,7 @@ export const QueryInitUserDeliveries = `create table if not exists user_deliveri
 
 /* Drop Database */
 export const QueryDropDeliveries = 'drop table if exists deliveries;';
+export const QueryDropUserDeliveries = 'drop table if exists user_deliveries;';
 
 /* Select Database */
 export const QuerySelectDeliveries = 'select * from deliveries;';

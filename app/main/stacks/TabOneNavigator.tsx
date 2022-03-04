@@ -7,6 +7,7 @@ import {
   HSHeaderTrackingDetailRight,
 } from '@components/HomeScreen/HSComponents';
 import HSTrackingDetail from '@components/HomeScreen/HSTrackingDetail';
+import HSTrackingDetailLog from '@components/HomeScreen/HSTrackingDetailLog';
 import {TabOneParamList} from '@const/types';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
@@ -34,6 +35,13 @@ export default function TabOneNavigator() {
           headerRight: () => <HSHeaderTrackingDetailRight />,
         })}>
         {() => <Suspense children={<HSTrackingDetail />} />}
+      </TabOneStack.Screen>
+      <TabOneStack.Screen
+        name="HSTrackingDetailLog"
+        options={({route}: {route: any}) => ({
+          headerTitle: () => <HSHeaderTrackingDetailLeft route={route} />,
+        })}>
+        {() => <Suspense children={<HSTrackingDetailLog />} />}
       </TabOneStack.Screen>
     </TabOneStack.Navigator>
   );

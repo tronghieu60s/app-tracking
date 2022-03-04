@@ -1,6 +1,7 @@
 import {DeliveryType} from '@const/types';
 import {
   QueryDropDeliveries,
+  QueryDropUserDeliveries,
   QueryInitDeliveries,
   QueryInitUserDeliveries,
 } from '../models/query';

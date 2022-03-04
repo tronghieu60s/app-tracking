@@ -16,6 +16,7 @@ export type BottomTabParamList = {
 export type TabOneParamList = {
   TabOneScreen: undefined;
   HSTrackingDetail: {delivery: UserDeliveryType};
+  HSTrackingDetailLog: {delivery: UserDeliveryType};
 };
 
 export type TabFourParamList = {
