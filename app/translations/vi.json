@@ -2,6 +2,11 @@
     "app.header.logo": "EStudy Studio",
     "app.header.application": "Tra Cứu Mã Vận Đơn",
 
+    "app.update.title": "Cập nhật có sẵn",
+    "app.update.message": "Đã có bản cập nhật mới có sẵn, bạn có muốn cài đặt không?",
+    "app.update.install": "Cài đặt",
+    "app.update.ignore": "Bỏ qua",
+
     "app.tab.home": "Trang Chủ",
     "app.tab.setting": "Cài Đặt",
     "app.tab.setting.information": "Thông Tin Ứng Dụng",

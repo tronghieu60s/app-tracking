@@ -2,6 +2,11 @@
     "app.header.logo": "EStudy Studio",
     "app.header.application": "Lookup Bill Of Lading Code",
 
+    "app.update.title": "Update available",
+    "app.update.message": "An update is available, do you want to install it?",
+    "app.update.install": "Install",
+    "app.update.ignore": "Skip",
+
     "app.tab.home": "Home",
     "app.tab.setting": "Setting",
     "app.tab.setting.information": "Application Information",

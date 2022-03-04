@@ -21,6 +21,6 @@ $ npx react-native-rename "Package Tracking" -b com.tronghieuit.tracking.deliver
 ## AppCenter
 
 ```bash
-$ appcenter codepush release-react -a estudy.studio/laiziuq-toeic -d Staging
-$ appcenter codepush release-react -a estudy.studio/laiziuq-toeic -d Production
+$ appcenter codepush release-react -a estudy.studio/tracking-app -d Staging
+$ appcenter codepush release-react -a estudy.studio/tracking-app -d Production
 ```
