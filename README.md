@@ -15,7 +15,7 @@ $ emulator -avd Pixel_XL_API_23 -no-cache
 ## Rename Package
 
 ```bash
-$ npx react-native-rename "Laiziuq App" -b com.tronghieuit.laiziuq
+$ npx react-native-rename "Package Tracking" -b com.tronghieuit.tracking.package
 ```
 
 ## AppCenter
