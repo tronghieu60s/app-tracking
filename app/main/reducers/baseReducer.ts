@@ -7,6 +7,11 @@ export const themeState = atom<'light' | 'dark'>({
   default: 'light',
 });
 
+export const languageStateAtom = atom<keyof typeof translations>({
+  key: 'languageStateAtom',
+  default: getLanguage(),
+});
+
 export const languageState = selector<keyof typeof translations>({
   key: 'languageState',
   get: ({get}) => get(languageStateAtom),
@@ -14,11 +19,6 @@ export const languageState = selector<keyof typeof translations>({
     set(languageStateAtom, newValue);
     setLanguage(newValue as keyof typeof translations);
   },
-});
-
-export const languageStateAtom = atom<keyof typeof translations>({
-  key: 'languageStateAtom',
-  default: getLanguage(),
 });
 
 export const loadingState = atom<boolean>({

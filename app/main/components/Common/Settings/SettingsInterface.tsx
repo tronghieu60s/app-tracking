@@ -49,11 +49,13 @@ export default function SettingsInterface() {
         onPress={() => setModalVisible(true)}
       />
       <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}>
-        <View style={tailwind('w-9/12 bg-white rounded-md px-8 py-4')}>
+        <View style={tailwind('w-9/12 bg-white rounded-md p-4')}>
           {objToArrByKey(languages).map(({key, name, image}) => (
             <Ripple key={key} onPress={() => setChangeLanguage(key)}>
               <View
-                style={tailwind('w-full flex-row items-center my-1.5 py-0.5')}>
+                style={tailwind(
+                  'w-full flex-row items-center my-1.5 px-4 py-0.5',
+                )}>
                 <Image style={tailwind('w-8 h-8 mr-3')} source={image} />
                 <OpenSansText style={tailwind('text-sm font-bold')}>
                   {name}

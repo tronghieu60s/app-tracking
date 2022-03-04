@@ -120,7 +120,7 @@ export function HSHeaderRight({
         <PlusCircle stroke="#000" width={18} height={18} />
       </Ripple>
       <Modal modalVisible={modalVisible} setModalVisible={setModalVisible}>
-        <View style={tailwind('w-11/12 bg-white rounded-md p-6 pb-8')}>
+        <View style={tailwind('w-11/12 bg-white rounded-md px-6 py-8')}>
           <TrackingForm
             packageCode={packageCode}
             setPackageCode={setPackageCode}

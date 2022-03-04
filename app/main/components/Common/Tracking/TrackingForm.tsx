@@ -45,11 +45,8 @@ export default function TrackingForm(props: Props) {
 
   return (
     <View>
-      <OpenSansText style={tailwind('capitalize text-base font-semibold')}>
-        {I18n.t('app.tracking.title')}
-      </OpenSansText>
       <View style={tailwind('px-2')}>
-        <View style={tailwind('mt-6')}>
+        <View>
           <OpenSansText>{I18n.t('app.tracking.codeInput.label')}:</OpenSansText>
           <TextInput
             value={props.packageCode}
@@ -77,7 +74,7 @@ export default function TrackingForm(props: Props) {
           </View>
         </View>
       </View>
-      <View style={tailwind('mt-6')}>
+      <View style={tailwind('mt-5')}>
         <Ripple
           style={tailwind('w-full rounded-md')}
           styleInside={tailwind('rounded-md bg-blue-600 p-2.5')}
