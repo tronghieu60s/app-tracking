@@ -1,4 +1,4 @@
-package com.tronghieuit.tracking.package;
+package com.tronghieuit.tracking.delivery;
 
 import android.os.Bundle;
 

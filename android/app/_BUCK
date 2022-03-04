@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.tronghieuit.tracking.package",
+    package = "com.tronghieuit.tracking.delivery",
 )
 
 android_resource(
     name = "res",
-    package = "com.tronghieuit.tracking.package",
+    package = "com.tronghieuit.tracking.delivery",
     res = "src/main/res",
 )
 
