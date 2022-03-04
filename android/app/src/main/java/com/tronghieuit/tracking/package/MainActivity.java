@@ -1,4 +1,4 @@
-package com.tronghieuit.delivery.tracking;
+package com.tronghieuit.tracking.package;
 
 import android.os.Bundle;
 
@@ -12,6 +12,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "DeliveryTracking";
+    return "PackageTracking";
   }
 }
