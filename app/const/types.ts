@@ -30,14 +30,16 @@ export type DeliveryType = {
   name_delivery?: string;
   description_delivery?: string;
   url_delivery?: string;
-  active_delivery?: boolean;
-  captcha_delivery?: boolean;
-  created_at?: string;
-  updated_at?: string;
+  ajax_delivery?: 0 | 1;
+  active_delivery?: 0 | 1;
+  captcha_delivery?: 0 | 1;
+  scripts_delivery?: string;
 };
 
 export type UserDeliveryType = DeliveryType & {
   id_tracking: string;
   code_delivery?: string;
   title_delivery?: string;
+  created_at?: string;
+  updated_at?: string;
 };

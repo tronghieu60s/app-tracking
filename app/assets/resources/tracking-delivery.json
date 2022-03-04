@@ -4,63 +4,87 @@
         "name_delivery": "J&T Express",
         "description_delivery": "J&T Express",
         "url_delivery": "https://jtexpress.vn/track?billcodes=",
+        "ajax_delivery": false,
         "active_delivery": true,
-        "captcha_delivery": false
+        "captcha_delivery": false,
+        "scripts_delivery": "",
+        "example_code_delivery": "812136874213"
     },
     {
         "id_delivery": 2,
         "name_delivery": "Giao Hàng Nhanh",
         "description_delivery": "Giao Hàng Nhanh",
         "url_delivery": "https://donhang.ghn.vn/?order_code=",
+        "ajax_delivery": false,
         "active_delivery": true,
-        "captcha_delivery": false
+        "captcha_delivery": false,
+        "scripts_delivery": "",
+        "example_code_delivery": "GANH64B4"
     },
     {
         "id_delivery": 3,
         "name_delivery": "VN Post",
         "description_delivery": "VN Post",
         "url_delivery": "http://www.vnpost.vn/vi-vn/dinh-vi/buu-pham?key=",
+        "ajax_delivery": false,
         "active_delivery": true,
-        "captcha_delivery": false
+        "captcha_delivery": true,
+        "scripts_delivery": "",
+        "example_code_delivery": "EJ211551954VN"
     },
     {
         "id_delivery": 4,
         "name_delivery": "Shopee Express",
         "description_delivery": "Shopee Express",
         "url_delivery": "https://spx.vn/",
+        "ajax_delivery": false,
         "active_delivery": true,
-        "captcha_delivery": false
+        "captcha_delivery": false,
+        "scripts_delivery": "",
+        "example_code_delivery": "SPXVN028945275041"
     },
     {
         "id_delivery": 5,
         "name_delivery": "Giao Hàng Tiết Kiệm",
         "description_delivery": "Giao Hàng Tiết Kiệm",
         "url_delivery": "https://i.ghtk.vn/",
+        "ajax_delivery": false,
         "active_delivery": true,
-        "captcha_delivery": false
+        "captcha_delivery": false,
+        "scripts_delivery": "",
+        "example_code_delivery": "703614809"
     },
     {
         "id_delivery": 6,
         "name_delivery": "BEST Express",
         "description_delivery": "BEST Express",
         "url_delivery": "https://best-inc.vn/track?bills=",
+        "ajax_delivery": false,
         "active_delivery": true,
-        "captcha_delivery": true
+        "captcha_delivery": true,
+        "scripts_delivery": "",
+        "example_code_delivery": "84855868813243"
     },
     {
         "id_delivery": 7,
         "name_delivery": "Ninja Van",
         "description_delivery": "Ninja Van",
         "url_delivery": "https://www.ninjavan.co/en-vn/tracking?id=",
+        "ajax_delivery": false,
         "active_delivery": true,
-        "captcha_delivery": true
+        "captcha_delivery": true,
+        "scripts_delivery": "",
+        "example_code_delivery": "SPEVN211971341194Y"
     },
     {
         "id_delivery": 8,
         "name_delivery": "Viettel Post",
         "description_delivery": "Viettel Post",
         "url_delivery": "https://viettelpost.com.vn/tra-cuu-hanh-trinh-don/",
+        "ajax_delivery": false,
         "active_delivery": true,
-        "captcha_delivery": true
+        "captcha_delivery": true,
+        "scripts_delivery": "",
+        "example_code_delivery": "SHOPEEVTP95170150"
     }
 ]

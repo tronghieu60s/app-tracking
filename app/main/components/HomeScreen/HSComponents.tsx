@@ -2,20 +2,24 @@ import Modal from '@components/Base/Common/Modal';
 import {OpenSansText} from '@components/Base/StyledText';
 import {Ripple} from '@components/Base/Theme';
 import TrackingForm from '@components/Common/Tracking/TrackingForm';
-import {TabOneParamList} from '@const/types';
+import {DeliveryType, TabOneParamList} from '@const/types';
 import {capitalizeFirstLetter, toast} from '@core/commonFuncs';
 import I18n from '@core/i18n';
-import {insDelivery, slDeliveryById} from '@core/models';
+import {insDelivery, slDeliveryByCode, slDeliveryById} from '@core/models';
 import {APP_PUBLISHER_NAME} from '@env';
 import {RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {requestTrackingReloadState} from '@reducers/commonReducer';
 import {deliveriesForceLoadState} from '@reducers/deliveriesReducer';
 import React, {useCallback, useState} from 'react';
-import {View} from 'react-native';
+import {Alert, View} from 'react-native';
 import {PlusCircle, RotateCcw} from 'react-native-feather';
 import {useSetRecoilState} from 'recoil';
-import {useTailwind} from 'tailwind-rn/dist';
+import {useTailwind} from 'tailwind-rn';
+
+type DeliveryTypeExample = DeliveryType & {example_code_delivery?: string};
+
+const deliveries: DeliveryTypeExample[] = require('@assets/resources/tracking-delivery.json');
 
 /* HSHeader -------------------
  * ----------------------------
@@ -55,9 +59,16 @@ export function HSHeaderRight({
   const [packageCode, setPackageCode] = useState('');
   const [packageDelivery, setPackageDelivery] = useState('');
 
-  const onPress = useCallback(async () => {
-    if (packageCode.length === 0) {
-      return toast(I18n.t('app.tracking.packageCode.required'));
+  const handleSubmit = useCallback(async () => {
+    /* Debug Deliveries */
+    if (packageCode === 'DEBUG') {
+      for (let index = 0; index < deliveries.length; index += 1) {
+        const {id_delivery, example_code_delivery} = deliveries[index];
+        await insDelivery(id_delivery, example_code_delivery || '');
+      }
+      setPackageCode('');
+      setModalVisible(false);
+      return setDeliveriesForceLoad(Math.random());
     }
 
     const insertDelivery = await insDelivery(packageDelivery, packageCode);
@@ -70,6 +81,25 @@ export function HSHeaderRight({
       navigation.navigate('HSTrackingDetail', {delivery});
     }
   }, [navigation, packageCode, packageDelivery, setDeliveriesForceLoad]);
+
+  const onPress = useCallback(async () => {
+    if (packageCode.length === 0) {
+      return toast(I18n.t('app.tracking.packageCode.required'));
+    }
+
+    if (!(await slDeliveryByCode(packageCode))) {
+      return handleSubmit();
+    }
+
+    Alert.alert(
+      I18n.t('app.tracking.alert'),
+      I18n.t('app.tracking.packageCode.exists'),
+      [
+        {text: 'OK', onPress: () => handleSubmit()},
+        {text: 'Cancel', onPress: () => setPackageCode(''), style: 'cancel'},
+      ],
+    );
+  }, [handleSubmit, packageCode]);
 
   return (
     <View style={tailwind('flex-row justify-center items-center')}>

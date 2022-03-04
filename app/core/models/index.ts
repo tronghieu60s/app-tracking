@@ -25,6 +25,13 @@ export const slDeliveryById = async (id_tracking: string) => {
   return getValue.raw()?.[0];
 };
 
+export const slDeliveryByCode = async (code_delivery: string) => {
+  const getValue = await executeSql(Query.QuerySelectDeliveryByCode, [
+    code_delivery,
+  ]);
+  return getValue.raw()?.[0];
+};
+
 /* Insert Database */
 
 export const insDelivery = async (
