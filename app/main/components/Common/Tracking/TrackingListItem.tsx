@@ -1,7 +1,7 @@
 import {OpenSansText} from '@components/Base/StyledText';
 import {Ripple} from '@components/Base/Theme';
 import {UserDeliveryType} from '@const/types';
-import {getDateTimeFromSql} from '@core/commonFuncs';
+import {getDateTimeFromSql, truncate} from '@core/commonFuncs';
 import React from 'react';
 import {Image, View} from 'react-native';
 import {Activity, Clock, Edit, Trash} from 'react-native-feather';
@@ -75,8 +75,7 @@ export default function TrackingListItem(props: Props) {
               style={tailwind('mr-2')}
             />
             <OpenSansText style={tailwind('text-slate-900 text-xs')}>
-              {props.delivery.code_delivery?.slice(0, 10)}
-              {props.delivery.code_delivery?.length || 0 > 10 ? '...' : ''} |
+              {truncate(props.delivery.code_delivery || '', 10)} |{' '}
               {props.delivery.name_delivery}
             </OpenSansText>
           </View>

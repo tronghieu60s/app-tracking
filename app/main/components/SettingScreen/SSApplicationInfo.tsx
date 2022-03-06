@@ -15,7 +15,7 @@ export default function SSApplicationInfo() {
       )}>
       <View style={tailwind('w-full bg-transparent items-center')}>
         <Image
-          style={tailwind('w-20 h-20 rounded-full')}
+          style={tailwind('w-20 h-20 rounded-md')}
           source={require('@assets/images/ic_launcher.png')}
         />
         <View style={tailwind('bg-transparent items-center')}>

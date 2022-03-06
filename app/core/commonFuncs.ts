@@ -34,6 +34,14 @@ export const searchQueryArr = <T>(query: string, items: T[], key?: keyof T) => {
 };
 
 /**
+ * @param  {string} source
+ * @param  {number} size
+ */
+export const truncate = (source: string, size: number) => {
+  return source.length > size ? source.slice(0, size - 1) + '…' : source;
+};
+
+/**
  * @param  {any[]} a
  */
 export const shuffleArr = (arr: any[]) => {

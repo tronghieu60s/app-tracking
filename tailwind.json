@@ -314,6 +314,14 @@
 			"borderBottomLeftRadius": 8
 		}
 	},
+	"rounded": {
+		"style": {
+			"borderTopLeftRadius": 4,
+			"borderTopRightRadius": 4,
+			"borderBottomRightRadius": 4,
+			"borderBottomLeftRadius": 4
+		}
+	},
 	"border": {
 		"style": {
 			"borderTopWidth": 1,
