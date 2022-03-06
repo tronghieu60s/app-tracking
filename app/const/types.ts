@@ -30,6 +30,7 @@ export type DeliveryType = {
   id_delivery: string;
   name_delivery?: string;
   description_delivery?: string;
+  encode_delivery?: string;
   url_delivery?: string;
   ajax_delivery?: 0 | 1;
   active_delivery?: 0 | 1;

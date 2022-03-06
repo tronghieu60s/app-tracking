@@ -77,7 +77,7 @@ export default function TrackingForm(props: Props) {
       <View style={tailwind('mt-5')}>
         <Ripple
           style={tailwind('w-full rounded-md')}
-          styleInside={tailwind('rounded-md bg-blue-600 p-2.5')}
+          styleInside={tailwind('rounded-md bg-blue-800 p-2.5')}
           onPress={props.onPress}>
           <OpenSansText
             style={tailwind('capitalize text-sm text-white self-center')}>
