@@ -24,11 +24,14 @@ DerivedData
 # Android/IntelliJ
 #
 build/
+release/
+releaseStaging/
 .idea
 .gradle
 local.properties
 *.iml
 *.hprof
+**/.cxx
 
 # node.js
 #
@@ -58,6 +61,9 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# VS Code
+.vscode
 
 # Env
 .env
