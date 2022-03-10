@@ -56,7 +56,7 @@ export default function TrackingListItem(props: Props) {
       <View style={tailwind('flex-row justify-between items-center')}>
         <View style={tailwind('w-2/12')}>
           <Image
-            style={tailwind('w-10 h-10 bg-white')}
+            style={tailwind('w-10 h-10 bg-white rounded-lg')}
             source={getImage(props.delivery.encode_delivery || '')}
           />
         </View>

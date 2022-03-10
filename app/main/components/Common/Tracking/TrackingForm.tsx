@@ -81,7 +81,7 @@ export default function TrackingForm(props: Props) {
           onPress={props.onPress}>
           <OpenSansText
             style={tailwind('capitalize text-sm text-white self-center')}>
-            {I18n.t('app.tracking.add.button.placeholder')}
+            {I18n.t('app.tracking.add.button')}
           </OpenSansText>
         </Ripple>
         <OpenSansText style={tailwind('text-xs mt-4')}>

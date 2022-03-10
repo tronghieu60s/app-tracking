@@ -23,9 +23,9 @@ export default function TabOneNavigator() {
       screenOptions={screenOptions}>
       <TabOneStack.Screen
         name="TabOneScreen"
-        options={({navigation}: {navigation: any}) => ({
+        options={() => ({
           headerTitle: () => <HSHeaderLeft />,
-          headerRight: () => <HSHeaderRight navigation={navigation} />,
+          headerRight: () => <HSHeaderRight />,
         })}>
         {() => <Suspense children={<HomeScreen />} />}
       </TabOneStack.Screen>

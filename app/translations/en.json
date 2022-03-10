@@ -12,7 +12,7 @@
     "app.tab.setting.information": "Application Information",
 
     "app.tracking.edit.title": "Edit tracking information",
-    "app.tracking.add.button.placeholder": "Track order",
+    "app.tracking.add.button": "Track order",
     "app.tracking.edit.button.placeholder": "Edit tracking",
     "app.tracking.packageCode.exists": "This tracking already exists, do you want to add more of it?",
     "app.tracking.packageCode.required": "Please enter your tracking code.",
@@ -25,6 +25,8 @@
     "app.tracking.alert.captcha": "This shipping unit requires you to perform captcha authentication. Please do to continue tracking.",
     "app.tracking.toast.copiedClipboard": "Copied data to clipboard.",
     "app.tracking.toast.noInternet": "No internet connection, please connect to internet and try again.",
+    "app.tracking.package.noData": "No tracking items, please create a tracking.",
+    "app.tracking.package.noData.button": "New Tracking",
 
     "app.setting.interface": "Interface settings",
     "app.setting.interfaceTracking": "Are you missing a shipping unit? Just contact us:",

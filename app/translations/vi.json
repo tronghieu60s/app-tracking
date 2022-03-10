@@ -12,7 +12,7 @@
     "app.tab.setting.information": "Thông Tin Ứng Dụng",
 
     "app.tracking.edit.title": "Chỉnh sửa thông tin vận đơn",
-    "app.tracking.add.button.placeholder": "Tra cứu đơn hàng",
+    "app.tracking.add.button": "Tra cứu đơn hàng",
     "app.tracking.edit.button.placeholder": "Sửa vận đơn",
     "app.tracking.packageCode.exists": "Đơn hàng này đã tồn tại, bạn có muốn thêm nó không?",
     "app.tracking.packageCode.required": "Vui lòng nhập mã vận đơn của bạn.",
@@ -25,6 +25,8 @@
     "app.tracking.alert.captcha": "Đơn vị vận chuyển này yêu cầu bạn thực hiện xác thực captcha. Vui lòng thực hiện để tiếp tục tra cứu.",
     "app.tracking.toast.copiedClipboard": "Đã copy dữ liệu vào clipboard.",
     "app.tracking.toast.noInternet": "Không có kết nối internet, vui lòng kết nối internet và thử lại.",
+    "app.tracking.package.noData": "Không có mã vận đơn nào, vui lòng thực hiện tra cứu.",
+    "app.tracking.package.noData.button": "Tra cứu mới",
 
     "app.setting.interface": "Cài đặt giao diện",
     "app.setting.interfaceTracking": "Bạn đang bị thiếu một đơn vị vận chuyển? Chỉ cần liên hệ với chúng tôi:",
