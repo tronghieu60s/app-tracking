@@ -9,6 +9,10 @@ import {
   IsFirstLoading,
   Language,
   ResourceLanguage,
+  VisibleCodeDl,
+  VisibleImageDl,
+  VisibleNameDl,
+  VisibleTimeDl,
 } from '@const/storage';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -78,4 +82,46 @@ export const getCurrentVersion = async () => {
 export const setCurrentVersion = (value = APP_VERSION_DEFAULT) => {
   const _resource = _processInput(value);
   AsyncStorage.setItem(CurrentVersion, _resource);
+};
+
+/* Visible State */
+
+export const getVisibleImageDlExplain = async () => {
+  const result = (await AsyncStorage.getItem(VisibleImageDl)) || true;
+  return _processOutput(result);
+};
+
+export const setVisibleImageDlExplain = (resource = true) => {
+  const _resource = _processInput(resource);
+  AsyncStorage.setItem(VisibleImageDl, _resource);
+};
+
+export const getVisibleCodeDlExplain = async () => {
+  const result = (await AsyncStorage.getItem(VisibleCodeDl)) || true;
+  return _processOutput(result);
+};
+
+export const setVisibleCodeDlExplain = (resource = true) => {
+  const _resource = _processInput(resource);
+  AsyncStorage.setItem(VisibleCodeDl, _resource);
+};
+
+export const getVisibleNameDlExplain = async () => {
+  const result = (await AsyncStorage.getItem(VisibleNameDl)) || true;
+  return _processOutput(result);
+};
+
+export const setVisibleNameDlExplain = (resource = true) => {
+  const _resource = _processInput(resource);
+  AsyncStorage.setItem(VisibleNameDl, _resource);
+};
+
+export const getVisibleTimeDlExplain = async () => {
+  const result = (await AsyncStorage.getItem(VisibleTimeDl)) || true;
+  return _processOutput(result);
+};
+
+export const setVisibleTimeDlExplain = (resource = true) => {
+  const _resource = _processInput(resource);
+  AsyncStorage.setItem(VisibleTimeDl, _resource);
 };

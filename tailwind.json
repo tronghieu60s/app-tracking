@@ -136,6 +136,11 @@
 			"display": "flex"
 		}
 	},
+	"hidden": {
+		"style": {
+			"display": "none"
+		}
+	},
 	"h-20": {
 		"style": {
 			"height": 80
@@ -209,6 +214,16 @@
 	"w-10": {
 		"style": {
 			"width": 40
+		}
+	},
+	"w-0": {
+		"style": {
+			"width": 0
+		}
+	},
+	"w-10/12": {
+		"style": {
+			"width": "83.333333%"
 		}
 	},
 	"flex-1": {

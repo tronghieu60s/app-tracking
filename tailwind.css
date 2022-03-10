@@ -109,6 +109,10 @@
   display: flex
 }
 
+.hidden {
+  display: none
+}
+
 .h-20 {
   height: 5rem
 }
@@ -167,6 +171,14 @@
 
 .w-10 {
   width: 2.5rem
+}
+
+.w-0 {
+  width: 0px
+}
+
+.w-10\/12 {
+  width: 83.333333%
 }
 
 .flex-1 {

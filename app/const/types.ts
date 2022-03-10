@@ -35,7 +35,6 @@ export type DeliveryType = {
   ajax_delivery?: 0 | 1;
   active_delivery?: 0 | 1;
   captcha_delivery?: 0 | 1;
-  scripts_delivery?: string;
 };
 
 export type UserDeliveryType = DeliveryType & {
