@@ -78,5 +78,35 @@
         "active_delivery": true,
         "ajax_delivery": true,
         "captcha_delivery": true
+    },
+    {
+        "id_delivery": 9,
+        "name_delivery": "Kerry Express",
+        "description_delivery": "Kerry Express",
+        "encode_delivery": "kex",
+        "url_delivery": "https://kerryexpress.com.vn/trang-thai-don-hang?trackingid=",
+        "active_delivery": true,
+        "ajax_delivery": false,
+        "captcha_delivery": false
+    },
+    {
+        "id_delivery": 10,
+        "name_delivery": "DHL Vietnam",
+        "description_delivery": "DHL Vietnam",
+        "encode_delivery": "dhl",
+        "url_delivery": "https://www.dhl.com/vn-vi/home/tracking.html?submit=1&tracking-id=",
+        "active_delivery": true,
+        "ajax_delivery": false,
+        "captcha_delivery": false
+    },
+    {
+        "id_delivery": 11,
+        "name_delivery": "TNT Vietnam",
+        "description_delivery": "TNT Vietnam",
+        "encode_delivery": "tnt",
+        "url_delivery": "https://www.tnt.com/express/vi_vn/site/shipping-tools/tracking.html?searchType=con&cons=",
+        "active_delivery": true,
+        "ajax_delivery": false,
+        "captcha_delivery": false
     }
 ]

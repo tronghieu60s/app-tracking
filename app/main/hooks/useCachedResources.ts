@@ -7,8 +7,6 @@ import React, {useEffect} from 'react';
 import DeviceInfo from 'react-native-device-info';
 import SplashScreen from 'react-native-splash-screen';
 
-console.log(APP_DATA_VERSION);
-
 export default function useCachedResources() {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
 

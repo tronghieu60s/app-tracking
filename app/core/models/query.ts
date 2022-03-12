@@ -30,7 +30,8 @@ export const QueryDropDeliveries = 'drop table if exists deliveries;';
 export const QueryDropUserDeliveries = 'drop table if exists user_deliveries;';
 
 /* Select Database */
-export const QuerySelectDeliveries = 'select * from deliveries;';
+export const QuerySelectDeliveries =
+  'select * from deliveries order by deliveries.name_delivery;';
 export const QuerySelectAllDeliveries =
   'select * from user_deliveries inner join deliveries on deliveries.id_delivery = user_deliveries.id_delivery order by updated_at desc;';
 export const QuerySelectDeliveryById =

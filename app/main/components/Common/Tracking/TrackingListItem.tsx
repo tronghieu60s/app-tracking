@@ -39,6 +39,12 @@ const getImage = (encode_delivery: string) => {
       return require('@assets/images/vnp.png');
     case 'vtp':
       return require('@assets/images/vtp.png');
+    case 'kex':
+      return require('@assets/images/kex.png');
+    case 'dhl':
+      return require('@assets/images/dhl.png');
+    case 'tnt':
+      return require('@assets/images/tnt.png');
     default:
       break;
   }
